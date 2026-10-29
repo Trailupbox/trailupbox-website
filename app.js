@@ -50,16 +50,32 @@
 
   /* ---------- Cards ---------- */
 
+  /* Portrait-shaped source photos (e.g. the 2:3 Severance poster) must
+     never be centre-sliced by a landscape thumb: they get a blurred
+     backdrop + object-fit:contain treatment instead (.fit-contain). */
+  function isPortraitAsset(src) {
+    return /(^|\/)severance-poster\.jpg$/.test(src || "");
+  }
+
   function cardHTML(a, opts) {
     opts = opts || {};
-    var cls = "card" + (opts.portrait ? " card-portrait" : "");
-    var img = a.image
-      ? '<img src="' + esc(a.image) + '" alt="' + esc(a.title) + '" loading="lazy" ' +
-        'onerror="this.remove()">'
-      : "";
+    /* Celebrity stories always use portrait cards — their photos are
+       4:5 press shots and a 16/9 crop cuts faces and bodies. */
+    var portrait = opts.portrait || a.category === "Celebrity News";
+    var cls = "card" + (portrait ? " card-portrait" : "");
+    var contain = !portrait && isPortraitAsset(a.image);
+    var img = "";
+    if (a.image) {
+      img =
+        (contain
+          ? '<span class="thumb-blur" style="background-image:url(\'' + esc(a.image) + '\')"></span>'
+          : "") +
+        '<img src="' + esc(a.image) + '" alt="' + esc(a.title) + '" loading="lazy" ' +
+          'onerror="this.remove()">';
+    }
     return '' +
       '<article class="' + cls + '">' +
-        '<a class="card-thumb" href="' + articleUrl(a) + '" aria-label="' + esc(a.title) + '">' +
+        '<a class="card-thumb' + (contain ? " fit-contain" : "") + '" href="' + articleUrl(a) + '" aria-label="' + esc(a.title) + '">' +
           '<span class="thumb-fallback">' + esc(a.category) + '</span>' + img +
           '<span class="card-shade"></span>' +
         '</a>' +
@@ -223,8 +239,16 @@
     var ogImg = document.querySelector('meta[property="og:image"]');
     if (ogImg && a.image) ogImg.setAttribute("content", a.image);
 
+    /* Portrait photos (celebrity press shots, poster art) get the
+       blurred-backdrop + contain treatment so nothing is ever cut;
+       landscape images keep the cinematic 16/9 cover hero. */
+    var portraitHero = a.category === "Celebrity News" || isPortraitAsset(a.image);
     var heroImg = a.image
-      ? '<figure class="article-hero"><img src="' + esc(a.image) + '" alt="' + esc(a.title) + '" ' +
+      ? '<figure class="article-hero' + (portraitHero ? " is-portrait" : "") + '">' +
+        (portraitHero
+          ? '<span class="hero-blur" style="background-image:url(\'' + esc(a.image) + '\')"></span>'
+          : "") +
+        '<img src="' + esc(a.image) + '" alt="' + esc(a.title) + '" ' +
         'onerror="this.parentNode.remove()"></figure>'
       : "";
 
@@ -277,5 +301,25 @@
     else if (page === "celebrity") renderCategory("Celebrity News", "celebrity-grid");
     else if (page === "dates") renderDateTable("dates-table");
     else if (page === "article") renderArticle();
+
+    /* Tasteful reveal-on-scroll: sections fade/rise once as they
+       enter the viewport. Progressive — content is fully visible
+       without IntersectionObserver, and CSS disables the motion
+       entirely under prefers-reduced-motion. */
+    var rvEls = document.querySelectorAll(".row-section, .section, .page-head, .cta-band");
+    if ("IntersectionObserver" in window && rvEls.length) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add("rv-in");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.06 });
+      rvEls.forEach(function (el) {
+        el.classList.add("rv");
+        io.observe(el);
+      });
+    }
   });
 })();
