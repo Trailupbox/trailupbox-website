@@ -34,6 +34,16 @@ const ARTICLES = [
     youtubeId: "8Dx_xfStMIo",
     featured: true,
     tags: ["Dune Part Three", "News Wrap", "Box Office", "Netflix", "Prime Video"],
+    faq: [
+      { q: "When does Dune: Part Three open in cinemas?",
+        a: "Dune: Part Three opens on 18 December 2026 — the exact same day as Avengers: Doomsday." },
+      { q: "What is new in the final Dune: Part Three trailer?",
+        a: "The final trailer puts Chani at the very heart of the conspiracy against Emperor Paul, gives a first look at Paul and Chani's twins Leto II and Ghanima, and introduces Robert Pattinson as Scytale, a shapeshifter villain scheming to bring the emperor down." },
+      { q: "Which show just became number one on Prime Video?",
+        a: "The Terminal List Season 2 is now the number one show on Prime Video worldwide and in the US, per FlixPatrol — pushing Stephen King's Carrie down to number two." },
+      { q: "When does Dead-End Job release on Netflix?",
+        a: "Dead-End Job lands on Netflix on Friday, 30 October 2026 — a staffing agency offering fifty times the normal wage, sending desperate workers into nightmare workplaces." }
+    ],
     body: [
       "The most powerful man in the universe just found out the plot to kill him runs through his own family. That was the hook of our latest news wrap — plus a trailer that did five million views in a day, a streaming king dethroned in six days, and a record-breaking box-office run that just hit its first speed bump. All of it in about six minutes, no filler.",
       "## Dune: Part Three — The Final Trailer Changes Everything",
@@ -67,6 +77,16 @@ const ARTICLES = [
     image: "assets/elle-fanning.jpg",
     credit: "Getty Images",
     tags: ["Elle Fanning", "The Hunger Games", "Red Carpet", "Premiere"],
+    faq: [
+      { q: "What did Elle Fanning wear to the Sunrise on the Reaping London premiere?",
+        a: "A Robert Wun couture gown from the Fall/Winter 2026 line — a blush-pink sculptural petal bodice, a layered ruffled tulle skirt and a music-box ballerina headpiece, styled by Samantha McMillen and finished with Aquazzura pumps." },
+      { q: "Who does Elle Fanning play in The Hunger Games: Sunrise on the Reaping?",
+        a: "Elle Fanning plays Effie Trinket — and her premiere look channeled the character's Capitol extravagance." },
+      { q: "When does The Hunger Games: Sunrise on the Reaping release?",
+        a: "The film arrives in theatres on 20 November 2026." },
+      { q: "Where was the Sunrise on the Reaping London premiere held?",
+        a: "At HMV Westfield Shopping Centre in London — and it was Fanning's first event on the film's press tour." }
+    ],
     body: [
       "Elle Fanning stepped out in Robert Wun couture at the London fan premiere of *The Hunger Games: Sunrise on the Reaping*, held at HMV Westfield Shopping Centre — and the look was a tribute hiding in plain sight. Fanning plays Effie Trinket in the film, and the blush-pink sculptural petal bodice, layered ruffled tulle skirt and music-box ballerina headpiece channeled her character's Capitol extravagance perfectly.",
       "The gown is from Robert Wun's Fall/Winter 2026 couture line, styled by Samantha McMillen and finished with Aquazzura pumps. Fanning shared that this was her first event on the film's press tour — and if this is the opening statement, the rest of the tour has a very high bar to clear.",
@@ -84,6 +104,16 @@ const ARTICLES = [
     image: "assets/mckenna-grace.jpg",
     credit: "Getty Images",
     tags: ["Mckenna Grace", "The Hunger Games", "Red Carpet", "Premiere"],
+    faq: [
+      { q: "What did Mckenna Grace wear to the Sunrise on the Reaping London premiere?",
+        a: "A custom Almée Couture gown embellished to recreate the landscape of the film's arena — a densely beaded bodice rising into 3D mountainous terrain, with purple floral vines winding down the skirt and trailing into the train." },
+      { q: "Who does Mckenna Grace play in Sunrise on the Reaping?",
+        a: "She plays District 12 tribute Maysilee Donner — so she wore the arena her character has to survive." },
+      { q: "Which arena is embroidered on Mckenna Grace's gown?",
+        a: "The 50th Hunger Games arena — the Second Quarter Quell." },
+      { q: "When does The Hunger Games: Sunrise on the Reaping release?",
+        a: "The film arrives in theatres on 20 November 2026." }
+    ],
     body: [
       "Method dressing has a new champion. At the London fan premiere of *The Hunger Games: Sunrise on the Reaping*, Mckenna Grace arrived in a custom Almée Couture gown embellished to recreate the landscape of the film's 50th Hunger Games — the Second Quarter Quell arena itself.",
       "The detailing is extraordinary: a densely beaded bodice rising into 3D mountainous terrain, purple floral vines winding down the skirt, and the whole landscape trailing into the train. Grace plays District 12 tribute Maysilee Donner in the film — so she didn't just wear a dress inspired by the movie, she wore the arena her character has to survive.",
@@ -101,6 +131,14 @@ const ARTICLES = [
     image: "assets/charlize-theron.jpg",
     credit: "Getty Images",
     tags: ["Charlize Theron", "Givenchy", "Gala", "Los Angeles"],
+    faq: [
+      { q: "What did Charlize Theron wear to the Airbnb.org gala?",
+        a: "An emerald-green fringe dress from Givenchy's Ready-to-Wear Spring 2027 collection by Sarah Burton — a halter neckline, cinched waist, all-fringe skirt and low back — paired with Jessica McCormack jewelry and black pom-pom heels." },
+      { q: "Where was the Airbnb.org gala held?",
+        a: "At Milk Studios in Los Angeles — it was Airbnb.org's first-ever gala." },
+      { q: "What is Airbnb.org?",
+        a: "Airbnb.org is the nonprofit that provides free emergency housing to people hit by disasters, illness and other crises." }
+    ],
     body: [
       "Charlize Theron stepped out in Givenchy at Airbnb.org's first-ever gala at Milk Studios, Los Angeles — wearing an emerald-green fringe dress from the house's Ready-to-Wear Spring 2027 collection by Sarah Burton, paired with Jessica McCormack jewelry.",
       "The dress does all the talking: a halter neckline, cinched waist, an all-fringe skirt and a low back — finished with black heels adorned with puffy black circles, the pom-pom heels that set social media off. Theron shared the look on her own Instagram with the caption \"Green with envy.\"",
@@ -118,6 +156,14 @@ const ARTICLES = [
     image: "assets/mcconaughey.jpg",
     credit: "Getty Images",
     tags: ["Matthew McConaughey", "Camila Alves", "Gala", "Los Angeles"],
+    faq: [
+      { q: "Who attended the Airbnb.org gala with Matthew McConaughey?",
+        a: "His wife Camila Alves and their 18-year-old son Levi joined him at Milk Studios in Los Angeles." },
+      { q: "What did Camila Alves wear to the Airbnb.org gala?",
+        a: "A burgundy sequin halter gown by Sergio Hudson. Matthew McConaughey wore a classic Brioni suit, and Levi stepped out in a grey Sandro suit." },
+      { q: "What was the Airbnb.org gala for?",
+        a: "It was the first gala for Airbnb.org, the nonprofit providing free emergency housing to people facing disasters, illness and other crises." }
+    ],
     body: [
       "It was a family night out in Los Angeles: Matthew McConaughey and Camila Alves brought their 18-year-old son Levi along to Airbnb.org's first-ever gala at Milk Studios.",
       "Camila wore a burgundy sequin halter gown by Sergio Hudson, Matthew kept it classic in a Brioni suit, and Levi stepped out in a grey Sandro suit — three different registers of red-carpet polish, one very photogenic family.",
@@ -135,6 +181,16 @@ const ARTICLES = [
     image: "assets/hires/hope-street.jpg",
     youtubeId: "9Ok_xF2Sl5Y",
     tags: ["Best Movies", "2026", "Recommendations", "Streaming Guide"],
+    faq: [
+      { q: "What are the best new movies to watch right now in 2026?",
+        a: "Our top seven: Hope at number one, then The Invite, The Weight, the 4K remaster of Shin Godzilla, Tenzing, Colony and Matchbox — each with exactly where to stream it." },
+      { q: "Which 2026 movie is the most expensive Korean film ever made?",
+        a: "Hope — it cost around $46 million, from Na Hong-jin, the director of The Wailing." },
+      { q: "Where can I watch Hope (2026)?",
+        a: "Hope is in theatres now and available to rent at home." },
+      { q: "Where can I stream The Invite?",
+        a: "The Invite is streaming on HBO Max — where it was the platform's number one movie on its debut weekend." }
+    ],
     body: [
       "2026 has already delivered a monster year for movies — and most people have only heard of one or two of them. A kaiju classic reborn in 4K. A dinner party that turns into pure chaos. A Korean outbreak film from the director of *Train to Busan*. And at number one, the most expensive Korean movie ever made.",
       "Here is our countdown of the seven best new movies you can watch right now, with the stories, the scores and exactly where to stream each one.",
@@ -174,6 +230,16 @@ const ARTICLES = [
     image: "assets/hires/hope-hero.jpg",
     youtubeId: "1QMrg5F1uDA",
     tags: ["Hope", "Review", "Korean Cinema", "Spoiler-Free", "Cannes"],
+    faq: [
+      { q: "Is HOPE (2026) worth watching?",
+        a: "Yes — a spectacle with a heartbeat and a few cracks in the armor. It sits at 79% Certified Fresh on Rotten Tomatoes across 180 critic reviews, with audiences at 77%; the visual effects and the two-hour-thirty-six-minute runtime are what divide viewers." },
+      { q: "Who directed HOPE (2026)?",
+        a: "Na Hong-jin, the director of The Wailing, returning after ten silent years." },
+      { q: "Who stars in HOPE (2026)?",
+        a: "Hwang Jung-min as a tough old police chief, Zo In-sung as a veteran hunter and Jung Ho-yeon as a rookie cop. Michael Fassbender and Alicia Vikander also appear — in full performance capture as the visitors, so you never see their faces." },
+      { q: "Does this HOPE (2026) review contain spoilers?",
+        a: "No — the review is completely spoiler-free and covers the premise only: something enormous and not human comes ashore near a quiet harbor village in South Korea." }
+    ],
     body: [
       "Ten years. That's how long the director of *The Wailing* was gone — no films, no noise, nothing. Then Na Hong-jin came back with the most expensive Korean movie ever made: a monster epic so big and so strange that it split Cannes right down the middle. Half the room on its feet, cheering. The other half asking what on earth they just watched.",
       "So which side will you land on? Our full spoiler-free review — also on the channel as a video — answers exactly that.",
@@ -208,6 +274,16 @@ const ARTICLES = [
     image: "assets/hires/severance-corridor.jpg",
     youtubeId: "Tqsed4oVs80",
     tags: ["Severance", "Apple TV+", "Season 3", "Release Date"],
+    faq: [
+      { q: "When is Severance Season 3 coming out?",
+        a: "There is no official date yet. Industry outlets doing the production maths — filming length plus the show's heavy post-production — keep landing on a late 2027 premiere, but that is analysis, not an announcement." },
+      { q: "Has Apple announced the Severance Season 3 release date?",
+        a: "No. Filming has been underway since late July 2026, yet Apple TV+ has given no premiere window, no teaser and not even a vague 'coming soon'." },
+      { q: "Is Ben Stiller directing Severance Season 3?",
+        a: "No — according to reporting from the Los Angeles Times, Stiller is not directing any episodes of Season 3, a genuine shift for a series whose visual identity was tied to his eye." },
+      { q: "Will there be a Severance Season 4?",
+        a: "Possibly — reports around Apple's roughly $70 million deal to acquire full ownership of the Severance IP suggest a fourth season is viewed internally as close to a lock, though Apple has not confirmed it." }
+    ],
     body: [
       "It is the question every Severance fan keeps asking, and Apple keeps refusing to answer: when is Season 3 coming? Cameras started rolling again in late July 2026, the cast is back on set, and still there is no premiere window, no teaser, and not even a vague \"coming soon\" from Apple TV+. For a show that collected 27 Emmy nominations for its second season, that silence is starting to feel like a strategy rather than an accident.",
       "Part of the story is creative control. Apple acquired full ownership of the Severance IP in a deal reported at around $70 million, which means the streamer is no longer just distributing the show — it owns it outright. When a platform owns a flagship outright, it tends to protect the long game. Reports around the deal suggested a fourth season is viewed internally as close to a lock, which changes the pressure on Season 3 completely: there is no need to rush a date out just to prove the show is alive.",
@@ -226,6 +302,16 @@ const ARTICLES = [
     image: "assets/hires/wednesday-typewriter.jpg",
     youtubeId: "",
     tags: ["Wednesday", "Netflix", "Jenna Ortega", "Season 3"],
+    faq: [
+      { q: "When is Wednesday Season 3 coming out on Netflix?",
+        a: "There is no official release date yet. Based on the wrap timing and the scale of post-production, a 2027 premiere is the widely expected window — but until Netflix says it, that stays an expectation, not a fact." },
+      { q: "Has Wednesday Season 3 finished filming?",
+        a: "Yes — filming ran from February to the end of September 2026 and has officially wrapped." },
+      { q: "Who is joining the Wednesday Season 3 cast?",
+        a: "Winona Ryder joins as Tabitha, with Susan Sarandon, Chris Sarandon, Noah Taylor, Oscar Morgan and Kennedy Moyer also in the mix, and Eva Green cast in a role Netflix is keeping sealed." },
+      { q: "Why did Wednesday Season 3 film in Paris?",
+        a: "Nobody knows yet — the production spent part of April 2026 filming in Paris, and Netflix has offered no explanation for what Wednesday Addams is doing there." }
+    ],
     body: [
       "Wednesday Season 3 has officially wrapped filming, closing a production run that stretched from February to the end of September 2026 — and everything about this season says Netflix is scaling up. A shoot that long, for a series that already sits among the most-watched English-language shows in the platform's history, is not business as usual. It is a statement of intent.",
       "The casting alone tells the story. Winona Ryder joins as Tabitha, in a piece of casting that feels almost too perfect: the Beetlejuice connection to Tim Burton's world makes her arrival feel less like a guest spot and more like a homecoming. Around her, the new ensemble stretches further — Susan Sarandon, Chris Sarandon, Noah Taylor, Oscar Morgan and Kennedy Moyer are all in the mix, while several major roles remain officially sealed, which is exactly how Netflix likes it when it wants the internet to keep guessing.",
@@ -244,6 +330,14 @@ const ARTICLES = [
     image: "assets/hires/zendaya-odyssey.jpg",
     youtubeId: "PMdNOw-_4GE",
     tags: ["Zendaya", "Celebrity News", "Dune", "Spider-Man"],
+    faq: [
+      { q: "What movies does Zendaya have coming out in 2026?",
+        a: "Five major releases in one year: The Drama opposite Robert Pattinson in April, Euphoria Season 3 in the April–May window, The Odyssey in July, Spider-Man: Brand New Day weeks later, and Dune: Part Three in December." },
+      { q: "Who does Zendaya play in The Odyssey?",
+        a: "She takes on the role of Athena in Christopher Nolan's The Odyssey." },
+      { q: "Who does Zendaya play in Dune: Part Three?",
+        a: "Chani — her role is positioned at the emotional centre of Denis Villeneuve's finale." }
+    ],
     body: [
       "Every few years, one actor has a year that seems to bend the release calendar around them. In 2026, that actor is Zendaya. Across a single twelve-month stretch she is attached to five major releases spanning prestige drama, the biggest literary adaptation in years, two franchise tentpoles and the return of the series that made her an Emmy winner.",
       "The run begins in spring: The Drama, opposite Robert Pattinson, arrives in April, followed closely by the long-awaited third season of Euphoria in the April–May window. Summer belongs to the giants — Christopher Nolan's The Odyssey in July, where she takes on the role of Athena, and Spider-Man: Brand New Day just weeks later, bringing her back as MJ. The year closes with the biggest swing of all: Dune: Part Three in December, with her role as Chani positioned at the emotional centre of Denis Villeneuve's finale.",
@@ -261,6 +355,14 @@ const ARTICLES = [
     image: "assets/severance-poster.jpg",
     youtubeId: "",
     tags: ["Severance", "Review", "Apple TV+", "Spoiler-Free"],
+    faq: [
+      { q: "Is Severance Season 2 worth watching?",
+        a: "Yes — Season 2 pushes the premise somewhere more personal, more painful and frequently more beautiful, and its final stretch is some of the most gripping television of the decade." },
+      { q: "Does this Severance Season 2 review contain spoilers?",
+        a: "None at all — no plot reveals and no episode specifics, so it costs you not a single surprise." },
+      { q: "Should I watch Severance Season 1 before Season 2?",
+        a: "Yes — Seasons 1 and 2 together make one of the finest complete viewing experiences on any platform right now. Watch both before Season 3 arrives." }
+    ],
     body: [
       "Some second seasons coast on the goodwill of the first. Severance Season 2 does the opposite — it takes the elegant, chilling premise of the original run and pushes it somewhere more personal, more painful and frequently more beautiful. This review is completely spoiler-free: no plot reveals, no episode specifics, nothing that would cost you a single surprise.",
       "The first thing you notice is confidence. Season 1 asked what the severance procedure does to a person; Season 2 is far more interested in what it does to everyone standing around that person. The emotional geometry of the show widens, and characters who were once supporting players are handed material that quietly rearranges how you feel about the entire story. Performances across the board are exceptional — this is an ensemble working at the very top of television acting right now, and the awards recognition that followed was not a surprise to anyone who watched.",
