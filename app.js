@@ -45,6 +45,17 @@
   }
 
   function articleUrl(a) { return "article.html?slug=" + encodeURIComponent(a.slug); }
+
+  /* Canonical host for SEO/social tags (the primary deployment). */
+  var SITE_BASE = "https://trailupbox.pages.dev/";
+  function absUrl(p) {
+    if (!p) return SITE_BASE + "assets/hires/dune-hero.jpg";
+    return /^https?:\/\//.test(p) ? p : SITE_BASE + String(p).replace(/^\//, "");
+  }
+  function setMeta(selector, attr, value) {
+    var el = document.querySelector(selector);
+    if (el) el.setAttribute(attr, value);
+  }
   function ytWatch(id) { return "https://youtu.be/" + id; }
   function ytThumb(id) { return "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg"; }
 
@@ -141,6 +152,45 @@
       : '<div class="empty-note">New stories are on the way — check back soon.</div>';
   }
 
+  /* ---------- Section unification: articles + their videos ----------
+     Every section presents ALL of its content in one place: the
+     category's articles first, then its YouTube videos as video
+     cards. VIDEOS is newest-first, so filtered lists stay
+     newest-first. Shorts never join a category page or row — they
+     live in the video rails only. */
+
+  function videosInSeries(seriesList) {
+    if (typeof VIDEOS === "undefined") return [];
+    var wanted = {};
+    (seriesList || []).forEach(function (s) { wanted[s] = true; });
+    return VIDEOS.filter(function (v) { return wanted[v.series]; });
+  }
+
+  function fillVideoGrid(id, seriesList) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var list = videosInSeries(seriesList);
+    el.innerHTML = list.length
+      ? list.map(videoCardHTML).join("")
+      : '<div class="empty-note">New videos are on the way — check back soon.</div>';
+  }
+
+  /* Homepage category rows: article cards lead; when a category has
+     fewer than 3 articles, its newest videos top the row up to 3
+     cards so no row ever looks empty or thin. */
+  function fillCategoryRow(id, articles, seriesList) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var html = articles.map(function (a, i) { return cardHTML(a, { wide: i === 0 }); });
+    if (html.length < 3) {
+      videosInSeries(seriesList).slice(0, 3 - html.length)
+        .forEach(function (v) { html.push(videoCardHTML(v)); });
+    }
+    el.innerHTML = html.length
+      ? html.join("")
+      : '<div class="empty-note">New stories are on the way — check back soon.</div>';
+  }
+
   /* ---------- Release dates ---------- */
 
   function statusClass(s) {
@@ -180,6 +230,55 @@
       '<table class="dates"><thead><tr>' +
       '<th>Title</th><th>Platform</th><th>Release Window</th><th>Status</th>' +
       '</tr></thead><tbody>' + rows + '</tbody></table>';
+  }
+
+  /* Release-dates FAQ — generated from RELEASE_DATES itself, so the
+     answers can never drift from the calendar. Status wording stays
+     honest: only "Confirmed" is stated as fixed; Expected/Rumoured
+     are labelled as such, and In Production windows are expectations,
+     not announcements. */
+  function renderDateFaq(id) {
+    var el = document.getElementById(id);
+    if (!el || typeof RELEASE_DATES === "undefined") return;
+    var faqs = RELEASE_DATES.map(function (d) {
+      var ans;
+      if (d.status === "Confirmed") {
+        var t = Date.parse(d.window);
+        ans = (!isNaN(t) && t < Date.now())
+          ? d.title + " came out on " + d.window + " — " + d.platform + ". The date is confirmed."
+          : d.title + " releases on " + d.window + " — " + d.platform + ". The date is confirmed.";
+      } else if (d.status === "Expected") {
+        ans = d.title + " is expected in " + d.window + " on " + d.platform +
+          " — expected, not yet officially confirmed.";
+      } else if (d.status === "Rumoured") {
+        ans = d.title + " is rumoured for " + d.window + " on " + d.platform +
+          " — rumoured only; there is no official confirmation yet.";
+      } else { /* In Production */
+        ans = d.title + " is in production, with a window of " + d.window + " on " + d.platform +
+          " — that window is an expectation, not an announced premiere date.";
+      }
+      return { q: "When does " + d.title + " come out?", a: ans };
+    });
+    el.innerHTML = faqs.map(function (f) {
+      return '<details class="faq-item"><summary>' + esc(f.q) + "</summary>" +
+        "<p>" + esc(f.a) + "</p></details>";
+    }).join("");
+    var faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(function (f) {
+        return {
+          "@type": "Question",
+          "name": f.q,
+          "acceptedAnswer": { "@type": "Answer", "text": f.a }
+        };
+      })
+    };
+    var s = document.createElement("script");
+    s.type = "application/ld+json";
+    s.id = "faq-jsonld";
+    s.textContent = JSON.stringify(faqLd);
+    document.head.appendChild(s);
   }
 
   /* ---------- Hero showcase (v4) ----------
@@ -263,14 +362,15 @@
       s.el.setAttribute("aria-hidden", j === next ? "false" : "true");
     });
     SC.idx = next;
-    /* Content crossfade: dip, swap, rise */
+    /* Content crossfade: a long, gentle dip — swap at full fade-out
+       (matches the .45s CSS transition), then rise. No blink. */
     var content = document.querySelector(".hero-content");
     if (content && !reducedMotion()) {
       content.classList.add("swap");
       setTimeout(function () {
         scPaint(next);
         content.classList.remove("swap");
-      }, 190);
+      }, 450);
     } else {
       scPaint(next);
     }
@@ -468,9 +568,15 @@
       renderVideoFilters();
     }
 
-    fillRow("latest-row", all.filter(function (x) { return x.category === "News"; }).slice(0, 6));
-    fillRow("reviews-row", all.filter(function (x) { return x.category === "Review"; }).slice(0, 6));
-    fillRow("picks-row", all.filter(function (x) { return x.category === "Recommendation"; }).slice(0, 6));
+    fillCategoryRow("latest-row",
+      all.filter(function (x) { return x.category === "News"; }).slice(0, 6),
+      ["Series Updates & Release Dates", "Nightly News", "K-Drama & Netflix"]);
+    fillCategoryRow("reviews-row",
+      all.filter(function (x) { return x.category === "Review"; }).slice(0, 6),
+      ["Reviews"]);
+    fillCategoryRow("picks-row",
+      all.filter(function (x) { return x.category === "Recommendation"; }).slice(0, 6),
+      ["Top 10 & Recommendations"]);
     fillRow("celebrity-row",
       all.filter(function (x) { return x.category === "Celebrity News"; }).slice(0, 6),
       { portrait: true });
@@ -500,7 +606,69 @@
     var metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute("content", a.excerpt);
     var ogImg = document.querySelector('meta[property="og:image"]');
-    if (ogImg && a.image) ogImg.setAttribute("content", a.image);
+    if (ogImg && a.image) ogImg.setAttribute("content", absUrl(a.image));
+
+    /* SEO: point every discovery/social tag at THIS story (absolute
+       URLs on the canonical host) and inject NewsArticle JSON-LD so
+       search engines and Discover see a fully-described article. */
+    var pageUrl = SITE_BASE + articleUrl(a);
+    var canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute("href", pageUrl);
+    setMeta('meta[property="og:title"]', "content", a.title);
+    setMeta('meta[property="og:description"]', "content", a.excerpt);
+    setMeta('meta[property="og:url"]', "content", pageUrl);
+    setMeta('meta[name="twitter:title"]', "content", a.title);
+    setMeta('meta[name="twitter:description"]', "content", a.excerpt);
+    setMeta('meta[name="twitter:image"]', "content", absUrl(a.image));
+    var org = {
+      "@type": "Organization",
+      "name": "Trailupbox",
+      "url": SITE_BASE
+    };
+    var ld = {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": a.title,
+      "description": a.excerpt,
+      "image": [absUrl(a.image)],
+      "datePublished": a.date,
+      "articleSection": a.category,
+      "inLanguage": "en",
+      "author": org,
+      "publisher": org,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl }
+    };
+    var oldLd = document.getElementById("article-jsonld");
+    if (oldLd) oldLd.parentNode.removeChild(oldLd);
+    var ldScript = document.createElement("script");
+    ldScript.type = "application/ld+json";
+    ldScript.id = "article-jsonld";
+    ldScript.textContent = JSON.stringify(ld);
+    document.head.appendChild(ldScript);
+
+    /* Question-style SEO: when the article carries a faq field, back
+       the visible "Questions people ask" block (rendered below) with
+       matching FAQPage structured data. */
+    if (a.faq && a.faq.length) {
+      var faqLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": a.faq.map(function (f) {
+          return {
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": { "@type": "Answer", "text": f.a }
+          };
+        })
+      };
+      var oldFaqLd = document.getElementById("faq-jsonld");
+      if (oldFaqLd) oldFaqLd.parentNode.removeChild(oldFaqLd);
+      var faqScript = document.createElement("script");
+      faqScript.type = "application/ld+json";
+      faqScript.id = "faq-jsonld";
+      faqScript.textContent = JSON.stringify(faqLd);
+      document.head.appendChild(faqScript);
+    }
 
     /* Portrait photos (celebrity press shots, poster art) get the
        blurred-backdrop + contain treatment so nothing is ever cut;
@@ -532,6 +700,17 @@
       return "<p>" + md(p) + "</p>";
     }).join("");
 
+    /* Visible question block — answers live in the article's faq
+       field and are mirrored by the FAQPage JSON-LD above. */
+    var faqHTML = (a.faq && a.faq.length)
+      ? '<div class="faq-block"><h2 class="faq-title">Questions people ask</h2>' +
+        a.faq.map(function (f) {
+          return '<details class="faq-item"><summary>' + esc(f.q) + "</summary>" +
+            "<p>" + esc(f.a) + "</p></details>";
+        }).join("") +
+        "</div>"
+      : "";
+
     main.innerHTML =
       '<p><a class="back-link" href="index.html">&larr; Back to home</a></p>' +
       '<div class="article-meta">' +
@@ -544,6 +723,7 @@
       heroImg +
       video +
       '<div class="article-body">' + body + '</div>' +
+      faqHTML +
       (tags ? '<div class="tag-row">' + tags + '</div>' : "");
 
     /* More stories: same category first, then the latest others */
@@ -683,11 +863,22 @@
   document.addEventListener("DOMContentLoaded", function () {
     var page = document.body.getAttribute("data-page");
     if (page === "home") renderHome();
-    else if (page === "news") renderCategory("News", "news-grid");
-    else if (page === "reviews") renderCategory("Review", "reviews-grid");
-    else if (page === "recommendations") renderCategory("Recommendation", "picks-grid");
+    else if (page === "news") {
+      renderCategory("News", "news-grid");
+      fillVideoGrid("news-videos", ["Series Updates & Release Dates"]);
+      fillVideoGrid("news-nightly-videos", ["Nightly News"]);
+      fillVideoGrid("news-kdrama-videos", ["K-Drama & Netflix"]);
+    }
+    else if (page === "reviews") {
+      renderCategory("Review", "reviews-grid");
+      fillVideoGrid("reviews-videos", ["Reviews"]);
+    }
+    else if (page === "recommendations") {
+      renderCategory("Recommendation", "picks-grid");
+      fillVideoGrid("picks-videos", ["Top 10 & Recommendations"]);
+    }
     else if (page === "celebrity") renderCategory("Celebrity News", "celebrity-grid");
-    else if (page === "dates") renderDateTable("dates-table");
+    else if (page === "dates") { renderDateTable("dates-table"); renderDateFaq("dates-faq"); }
     else if (page === "article") renderArticle();
 
     initLightbox();

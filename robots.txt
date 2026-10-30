@@ -1,0 +1,5 @@
+# Trailupbox — allow every crawler everywhere on the site.
+User-agent: *
+Allow: /
+
+Sitemap: https://trailupbox.pages.dev/sitemap.xml

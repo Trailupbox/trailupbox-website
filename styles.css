@@ -151,7 +151,7 @@ body[data-page="home"] main { padding-top: 0; }
   opacity: 0.045; mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
 }
-.hero-inner { width: 100%; padding: 132px 0 76px; }
+.hero-inner { width: 100%; padding: 108px 0 62px; }
 .hero-content { max-width: 680px; }
 .hero-content > * { animation: rise 0.9s var(--ease) both; }
 .hero-content > *:nth-child(2) { animation-delay: 0.09s; }
@@ -180,7 +180,7 @@ body[data-page="home"] main { padding-top: 0; }
 @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 .hero h1 {
   font-family: var(--serif);
-  font-size: clamp(2.35rem, 6vw, 4.35rem); line-height: 1.07; font-weight: 800;
+  font-size: clamp(2.35rem, 6vw, 3.9rem); line-height: 1.07; font-weight: 800;
   letter-spacing: -0.01em; text-wrap: balance;
   text-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
 }
@@ -486,6 +486,46 @@ table.dates tr:last-child td { border-bottom: none; }
 }
 .tag:hover { color: var(--text); border-color: rgba(216, 182, 92, 0.5); }
 
+/* ---------- Questions (FAQ) ---------- */
+.page-head .page-q {
+  color: var(--gold-2); font-family: var(--serif); font-style: italic;
+  font-size: 1.13rem; margin-top: 12px;
+}
+.faq-block { margin-top: 44px; }
+.faq-title {
+  font-family: var(--serif);
+  font-size: 1.5rem; font-weight: 800; line-height: 1.3;
+  margin: 0 0 8px;
+}
+.faq-title::after {
+  content: ""; display: block; width: 36px; height: 2px;
+  background: var(--grad); margin-top: 9px; box-shadow: 0 0 10px var(--glow);
+}
+.faq-item { border-bottom: 1px solid var(--line-soft); }
+.faq-item:first-of-type { border-top: 1px solid var(--line-soft); }
+.faq-block .faq-item:first-of-type { border-top: none; }
+.faq-item summary {
+  cursor: pointer; list-style: none;
+  padding: 15px 30px 15px 2px; position: relative;
+  font-weight: 700; font-size: 1.0rem; line-height: 1.5; color: var(--text);
+  transition: color 0.25s;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; position: absolute; right: 4px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold); font-size: 1.25rem; font-weight: 400; line-height: 1;
+  transition: transform 0.25s var(--ease-out);
+}
+.faq-item[open] summary { color: var(--gold-2); }
+.faq-item[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq-item summary:hover { color: var(--gold-2); }
+.faq-item p {
+  margin: 0; padding: 0 30px 17px 2px;
+  color: #d9cfb4; font-size: 0.99rem; line-height: 1.75;
+}
+.faq-list { max-width: 860px; }
+
 /* ---------- CTA + footer ---------- */
 .cta-band {
   margin: 64px 0 0; border-top: 1px solid rgba(43, 37, 25, 0.8);
@@ -598,8 +638,8 @@ table.dates tr:last-child td { border-bottom: none; }
   .row-track .card-portrait { flex-basis: 160px; }
   .row-track .card-wide { flex-basis: 84vw; }
   .date-chip { flex-basis: 220px; }
-  .hero-inner { padding: 112px 0 60px; }
-  .hero h1 { font-size: clamp(2.15rem, 10.5vw, 2.6rem); }
+  .hero-inner { padding: 92px 0 50px; }
+  .hero h1 { font-size: clamp(2.15rem, 10.5vw, 2.45rem); }
   .hero-actions .btn { padding: 12px 22px; font-size: 0.95rem; }
   .footer-nav { gap: 30px; }
   .article-wrap { padding-top: 32px; }
@@ -736,6 +776,10 @@ html { -webkit-tap-highlight-color: rgba(216, 182, 92, 0.18); }
 .ticker:hover .ticker-track { animation-play-state: paused; }
 @keyframes ticker-move { to { transform: translateX(-50%); } }
 .ticker-item {
+  /* flex:none is load-bearing: if items could shrink, the two
+     duplicated halves would differ in width and the -50% loop
+     seam would jump once per cycle. Fixed widths = a true glide. */
+  flex: none;
   color: #d9cfb6; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.2px;
   padding: 0 18px; transition: color 0.25s;
 }
@@ -747,22 +791,43 @@ html { -webkit-tap-highlight-color: rgba(216, 182, 92, 0.18); }
 }
 
 /* ---------- Hero showcase (slides replace the single backdrop) ---------- */
+/* Size: grand but capped — 92svh of footprint on desktop… */
 body[data-page="home"] .hero {
-  min-height: calc(100vh - var(--header-h) - 42px);
-  min-height: calc(100svh - var(--header-h) - 42px);
+  min-height: calc(92vh - var(--header-h) - 42px);
+  min-height: calc(92svh - var(--header-h) - 42px);
+}
+/* …and ~82svh on phones, so the next section peeks above the fold */
+@media (max-width: 720px) {
+  body[data-page="home"] .hero {
+    min-height: calc(82vh - var(--header-h) - 42px);
+    min-height: calc(82svh - var(--header-h) - 42px);
+  }
 }
 .hero-bg { animation: none; }
+/* Smoothness rules (owner: rotation "smooth kam hai"):
+   - opacity is driven by ONE mechanism only — the transition.
+     (v4 stacked a hero-fade restart animation on top of it, and
+     the two fought every 6s: that was the hitch.)
+   - the slow drift transform runs ONLY on the visible slide, so
+     the phone GPU composites one moving layer, not three;
+   - will-change keeps the active layers on their own planes;
+   - transform/opacity only — nothing here can trigger layout. */
 .hero-slide {
   position: absolute; inset: -3%;
   background-size: cover; background-position: center 20%;
   background-color: var(--panel);
-  opacity: 0; transition: opacity 1.15s ease;
-  animation: hero-drift 30s ease-in-out infinite alternate;
+  opacity: 0; transition: opacity 1.4s var(--ease);
+  will-change: opacity, transform;
   pointer-events: none;
 }
-.hero-slide.active { opacity: 1; animation: hero-drift 30s ease-in-out infinite alternate, hero-fade 1.2s ease both; }
-.hero-content { transition: opacity 0.19s ease, transform 0.19s ease; }
-.hero-content.swap { opacity: 0; transform: translateY(10px); }
+.hero-slide.active {
+  opacity: 1;
+  animation: hero-drift 36s ease-in-out infinite alternate;
+}
+/* Content swap: a long gentle dip matched to the 450ms JS swap —
+   a crossfade, not a blink. */
+.hero-content { transition: opacity 0.45s var(--ease), transform 0.45s var(--ease); will-change: opacity, transform; }
+.hero-content.swap { opacity: 0; transform: translateY(8px); }
 .hero-progress {
   position: absolute; right: 20px; bottom: 20px; z-index: 6;
   display: flex; gap: 8px;
