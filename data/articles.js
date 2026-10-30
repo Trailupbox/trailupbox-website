@@ -58,6 +58,7 @@ const ARTICLES = [
     excerpt:
       "The final season of Netflix's live-action Avatar wrapped filming in November 2025 and has been finished for almost a year. Netflix has shown exactly one photo, released no trailer, and will only say '2027'. Here is everything actually confirmed.",
     image: "assets/avatar-ozai-first-look.png",
+    youtubeId: "WnfAWzFu4SM",
     tags: ["Avatar The Last Airbender", "Netflix", "Season 3", "Release Date"],
     faq: [
       { q: "When does Avatar Season 3 come out?",
