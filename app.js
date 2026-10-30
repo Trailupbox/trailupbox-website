@@ -94,19 +94,26 @@
   }
 
   function videoCardHTML(v) {
+    /* Imagery rule (v4): where official hi-res art was sourced for the
+       title it replaces the YouTube thumbnail everywhere — card AND
+       lightbox. Untracked titles fall back to the YT maxres thumb. */
+    var maxres = "https://i.ytimg.com/vi/" + v.id + "/maxresdefault.jpg";
+    var thumb = v.art || ytThumb(v.id);
+    var full = v.art || maxres;
+    var badge = v.series + (v.label ? " &middot; " + v.label : "");
     return '' +
-      '<article class="card card-video">' +
+      '<article class="card card-video" data-series="' + esc(v.series) + '">' +
         '<a class="card-thumb" href="' + esc(v.url) + '" target="_blank" rel="noopener" ' +
           'aria-label="Watch on YouTube: ' + esc(v.title) + '">' +
-          '<img src="' + ytThumb(v.id) + '" alt="' + esc(v.title) + '" loading="lazy" ' +
-            'data-full="https://i.ytimg.com/vi/' + esc(v.id) + '/maxresdefault.jpg" ' +
+          '<img src="' + esc(thumb) + '" alt="' + esc(v.title) + '" loading="lazy" ' +
+            'data-full="' + esc(full) + '" ' +
             'data-fallback="' + ytThumb(v.id) + '" data-caption="' + esc(v.title) + '" ' +
             'onerror="this.remove()">' +
           '<span class="play-badge" aria-hidden="true">&#9654;</span>' +
           '<span class="card-shade"></span>' +
         '</a>' +
         '<div class="card-body">' +
-          '<div class="card-meta"><span class="badge badge-video">' + esc(v.label) + '</span>' +
+          '<div class="card-meta"><span class="badge badge-video">' + badge + '</span>' +
           '<span class="yt-tag">YouTube</span></div>' +
           '<h3><a href="' + esc(v.url) + '" target="_blank" rel="noopener">' + esc(v.title) + '</a></h3>' +
         '</div>' +
@@ -175,52 +182,290 @@
       '</tr></thead><tbody>' + rows + '</tbody></table>';
   }
 
-  /* ---------- Hero ---------- */
+  /* ---------- Hero showcase (v4) ----------
+     A rotating cinematic showcase of three cover stories. Slides
+     crossfade every ~6s with progress segments; rotation pauses on
+     hover / focus / touch and never runs under reduced-motion.
+     Slide backdrops are hi-res local art (assets/hires), never
+     YouTube thumbnails. */
 
-  function renderHero() {
+  var SHOWCASE_SLUGS = [
+    "dune-part-three-final-trailer-news-wrap",
+    "hope-2026-spoiler-free-review",
+    "severance-season-3-release-date-update"
+  ];
+  /* Per-slug backdrop overrides (wider art than the article hero) */
+  var SHOWCASE_BG = {
+    "dune-part-three-final-trailer-news-wrap": "assets/hires/dune-hero.jpg"
+  };
+  var SC = { slides: [], idx: 0, timer: null, paused: false, DUR: 6000 };
+
+  function reducedMotion() {
+    return !!(window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }
+
+  function scEnsureBg(i) {
+    var s = SC.slides[i];
+    if (s && !s.bgSet) {
+      s.el.style.backgroundImage = "url('" + s.bg + "')";
+      s.bgSet = true;
+    }
+  }
+
+  function scPaint(i) {
+    var s = SC.slides[i];
+    if (!s) return;
+    var a = s.article;
     var hero = document.getElementById("hero");
-    if (!hero) return;
-    var all = sortedArticles();
-    var a = all.filter(function (x) { return x.featured; })[0] || all[0];
-    if (!a) return;
-
-    var bg = document.getElementById("hero-bg");
-    if (bg && a.image) {
-      bg.style.backgroundImage = "url('" + a.image + "')";
-    }
-    /* Tapping the hero backdrop (not its buttons) opens the featured
-       image fullscreen in the lightbox. */
-    if (a.image) {
-      hero.setAttribute("data-full", a.image);
-      hero.setAttribute("data-caption", a.title);
-    }
+    /* Hero backdrop tap opens the CURRENT slide's art in the lightbox */
+    hero.setAttribute("data-full", s.bg);
+    hero.setAttribute("data-caption", a.title);
     document.getElementById("hero-chip").textContent = a.category;
     document.getElementById("hero-title").textContent = a.title;
     document.getElementById("hero-teaser").textContent = a.excerpt;
     document.getElementById("hero-date").textContent = fmtDate(a.date);
-
     var read = document.getElementById("hero-read");
     if (read) read.setAttribute("href", articleUrl(a));
-
     var watch = document.getElementById("hero-watch");
     if (watch) {
       if (a.youtubeId) {
+        watch.style.display = "";
         watch.setAttribute("href", ytWatch(a.youtubeId));
       } else {
         watch.style.display = "none";
       }
     }
+    var segs = document.querySelectorAll(".hp-seg");
+    Array.prototype.forEach.call(segs, function (seg, j) {
+      seg.classList.toggle("done", j < i);
+      seg.classList.toggle("active", j === i);
+      if (j === i) {
+        /* Restart the fill animation for the new active segment */
+        var fill = seg.querySelector(".hp-fill");
+        if (fill) {
+          fill.style.animation = "none";
+          void fill.offsetWidth;
+          fill.style.animation = "";
+        }
+      }
+    });
+  }
+
+  function scGo(i) {
+    var n = SC.slides.length;
+    if (!n) return;
+    var next = ((i % n) + n) % n;
+    scEnsureBg(next);
+    scEnsureBg((next + 1) % n);
+    SC.slides.forEach(function (s, j) {
+      s.el.classList.toggle("active", j === next);
+      s.el.setAttribute("aria-hidden", j === next ? "false" : "true");
+    });
+    SC.idx = next;
+    /* Content crossfade: dip, swap, rise */
+    var content = document.querySelector(".hero-content");
+    if (content && !reducedMotion()) {
+      content.classList.add("swap");
+      setTimeout(function () {
+        scPaint(next);
+        content.classList.remove("swap");
+      }, 190);
+    } else {
+      scPaint(next);
+    }
+  }
+
+  function scStart() {
+    if (SC.timer || SC.slides.length < 2 || reducedMotion()) return;
+    SC.timer = setInterval(function () {
+      if (!SC.paused && !document.hidden) scGo(SC.idx + 1);
+    }, SC.DUR);
+  }
+
+  function scPause(on) {
+    SC.paused = on;
+    var hero = document.getElementById("hero");
+    if (hero) hero.classList.toggle("hero-paused", on);
+  }
+
+  function renderShowcase() {
+    var hero = document.getElementById("hero");
+    var bgWrap = document.getElementById("hero-bg");
+    if (!hero || !bgWrap) return;
+    var all = sortedArticles();
+    var bySlug = {};
+    all.forEach(function (a) { bySlug[a.slug] = a; });
+    var picked = SHOWCASE_SLUGS.map(function (s) { return bySlug[s]; })
+      .filter(function (a) { return a && a.image; });
+    if (!picked.length) {
+      picked = all.filter(function (a) { return a.image; }).slice(0, 3);
+    }
+    if (!picked.length) return;
+
+    SC.slides = picked.map(function (a, i) {
+      var el = document.createElement("div");
+      el.className = "hero-slide" + (i === 0 ? " active" : "");
+      el.setAttribute("aria-hidden", i === 0 ? "false" : "true");
+      bgWrap.appendChild(el);
+      return { article: a, bg: SHOWCASE_BG[a.slug] || a.image, el: el, bgSet: false };
+    });
+    scEnsureBg(0);
+    /* Prefetch the next backdrop quietly so the first crossfade is clean */
+    setTimeout(function () { if (SC.slides.length > 1) scEnsureBg(1); }, 900);
+
+    var prog = document.getElementById("hero-progress");
+    if (prog && SC.slides.length > 1) {
+      prog.innerHTML = SC.slides.map(function (_, i) {
+        return '<button class="hp-seg" type="button" data-i="' + i + '" ' +
+          'aria-label="Show story ' + (i + 1) + '"><span class="hp-fill"></span></button>';
+      }).join("");
+      prog.addEventListener("click", function (e) {
+        var b = e.target.closest ? e.target.closest(".hp-seg") : null;
+        if (!b) return;
+        scGo(parseInt(b.getAttribute("data-i"), 10));
+        /* Restart the rotation clock after a manual jump */
+        if (SC.timer) { clearInterval(SC.timer); SC.timer = null; scStart(); }
+      });
+    }
+
+    scPaint(0);
+    scStart();
+
+    hero.addEventListener("mouseenter", function () { scPause(true); });
+    hero.addEventListener("mouseleave", function () { scPause(false); });
+    hero.addEventListener("focusin", function () { scPause(true); });
+    hero.addEventListener("focusout", function () { scPause(false); });
+    hero.addEventListener("touchstart", function () { scPause(true); }, { passive: true });
+    hero.addEventListener("touchend", function () {
+      setTimeout(function () { scPause(false); }, 2600);
+    }, { passive: true });
+  }
+
+  /* ---------- Trending ticker ---------- */
+
+  function renderTicker() {
+    var track = document.getElementById("ticker-track");
+    if (!track) return;
+    var items = sortedArticles().map(function (a) {
+      return '<a class="ticker-item" href="' + articleUrl(a) + '">' +
+        esc(a.title) + '</a><span class="ticker-sep" aria-hidden="true">&#10022;</span>';
+    }).join("");
+    /* Two identical halves make the -50% marquee loop seamless */
+    track.innerHTML = items + items;
+  }
+
+  /* ---------- Next-release countdown ---------- */
+
+  var MONTH_IDX = { january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
+    july: 6, august: 7, september: 8, october: 9, november: 10, december: 11 };
+
+  function parseWindowDate(w) {
+    var m = /(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/.exec(w || "");
+    if (!m) return null;
+    var mi = MONTH_IDX[m[2].toLowerCase()];
+    if (mi === undefined) return null;
+    return new Date(parseInt(m[3], 10), mi, parseInt(m[1], 10), 0, 0, 0, 0);
+  }
+
+  function nextRelease() {
+    if (typeof RELEASE_DATES === "undefined") return null;
+    var startToday = new Date();
+    startToday.setHours(0, 0, 0, 0);
+    var best = null;
+    RELEASE_DATES.forEach(function (d) {
+      var dt = parseWindowDate(d.window);
+      if (dt && dt >= startToday && (!best || dt < best.date)) {
+        best = { entry: d, date: dt };
+      }
+    });
+    return best;
+  }
+
+  function renderCountdown() {
+    var band = document.getElementById("countdown-band");
+    if (!band) return;
+    var target = nextRelease();
+    if (!target) { band.hidden = true; return; }
+    band.hidden = false;
+    document.getElementById("cd-title").textContent = target.entry.title;
+    document.getElementById("cd-meta").textContent =
+      target.entry.platform + " · " + target.entry.window;
+    var els = {
+      d: document.getElementById("cd-d"), h: document.getElementById("cd-h"),
+      m: document.getElementById("cd-m"), s: document.getElementById("cd-s")
+    };
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+    function tick() {
+      var diff = target.date - new Date();
+      if (diff <= 0) {
+        /* Release day (or just past): celebrate, stop the clock */
+        els.d.textContent = "00"; els.h.textContent = "00";
+        els.m.textContent = "00"; els.s.textContent = "00";
+        document.getElementById("cd-label").textContent = "Out Now";
+        clearInterval(iv);
+        return;
+      }
+      var sec = Math.floor(diff / 1000);
+      els.d.textContent = pad(Math.floor(sec / 86400));
+      els.h.textContent = pad(Math.floor((sec % 86400) / 3600));
+      els.m.textContent = pad(Math.floor((sec % 3600) / 60));
+      els.s.textContent = pad(sec % 60);
+    }
+    var iv = setInterval(tick, 1000);
+    tick();
+  }
+
+  /* ---------- All Videos: series filter ---------- */
+
+  var VIDEO_SERIES_ORDER = ["All", "Top 10 & Recommendations", "Reviews",
+    "Series Updates & Release Dates", "K-Drama & Netflix", "Nightly News", "Shorts"];
+
+  function renderVideoFilters() {
+    var wrap = document.getElementById("video-filters");
+    var rail = document.getElementById("all-videos-row");
+    if (!wrap || !rail || typeof VIDEOS === "undefined") return;
+    var counts = {};
+    VIDEOS.forEach(function (v) { counts[v.series] = (counts[v.series] || 0) + 1; });
+    wrap.innerHTML = VIDEO_SERIES_ORDER.filter(function (s) {
+      return s === "All" || counts[s];
+    }).map(function (s, i) {
+      var n = s === "All" ? VIDEOS.length : counts[s];
+      return '<button class="vf-btn' + (i === 0 ? " active" : "") + '" type="button" ' +
+        'data-filter="' + esc(s) + '">' + esc(s) +
+        ' <span class="vf-n">' + n + '</span></button>';
+    }).join("");
+    wrap.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest(".vf-btn") : null;
+      if (!b) return;
+      Array.prototype.forEach.call(wrap.querySelectorAll(".vf-btn"), function (x) {
+        x.classList.toggle("active", x === b);
+      });
+      var f = b.getAttribute("data-filter");
+      Array.prototype.forEach.call(rail.children, function (card) {
+        card.style.display =
+          (f === "All" || card.getAttribute("data-series") === f) ? "" : "none";
+      });
+    });
   }
 
   /* ---------- Page renderers ---------- */
 
   function renderHome() {
     var all = sortedArticles();
-    renderHero();
+    renderShowcase();
+    renderTicker();
+    renderCountdown();
 
     var videosEl = document.getElementById("videos-row");
     if (videosEl && typeof VIDEOS !== "undefined") {
-      videosEl.innerHTML = VIDEOS.map(videoCardHTML).join("");
+      videosEl.innerHTML = VIDEOS.slice(0, 8).map(videoCardHTML).join("");
+    }
+
+    var allVideosEl = document.getElementById("all-videos-row");
+    if (allVideosEl && typeof VIDEOS !== "undefined") {
+      allVideosEl.innerHTML = VIDEOS.map(videoCardHTML).join("");
+      renderVideoFilters();
     }
 
     fillRow("latest-row", all.filter(function (x) { return x.category === "News"; }).slice(0, 6));

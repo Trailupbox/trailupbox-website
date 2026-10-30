@@ -9,8 +9,9 @@
 <meta property="og:site_name" content="Trailupbox">
 <meta property="og:title" content="Trailupbox — Movie &amp; Web Series News, Release Dates, Reviews">
 <meta property="og:description" content="Daily movie & web series updates, release dates, spoiler-free reviews and recommendations.">
-<meta property="og:image" content="https://i.ytimg.com/vi/8Dx_xfStMIo/hqdefault.jpg">
+<meta property="og:image" content="https://trailupbox.pages.dev/assets/hires/dune-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="assets/hires/dune-hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
@@ -34,7 +35,15 @@
 </header>
 
 <main>
-  <!-- Full-bleed hero: featured story, filled from data/articles.js -->
+  <!-- Trending headlines ticker (filled from data/articles.js) -->
+  <div class="ticker" aria-label="Trending headlines">
+    <span class="ticker-tag">Trending</span>
+    <div class="ticker-view">
+      <div class="ticker-track" id="ticker-track"></div>
+    </div>
+  </div>
+
+  <!-- Cinematic showcase: three cover stories crossfade (app.js) -->
   <section class="hero" id="hero">
     <div class="hero-bg" id="hero-bg"></div>
     <div class="wrap hero-inner">
@@ -45,7 +54,27 @@
         <span class="hero-date" id="hero-date"></span>
         <div class="hero-actions">
           <a class="btn btn-accent" id="hero-watch" href="https://www.youtube.com/@Trailupbox" target="_blank" rel="noopener">&#9654; Watch Video</a>
-          <a class="btn btn-glass" id="hero-read" href="updates.html">Read Story</a>
+          <a class="btn btn-glass" id="hero-read" href="updates.html">Read Story <span class="arr" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-progress" id="hero-progress" role="group" aria-label="Cover stories"></div>
+  </section>
+
+  <!-- Next big release countdown (computed from RELEASE_DATES) -->
+  <section class="countdown-band" id="countdown-band" hidden>
+    <div class="wrap">
+      <div class="cd-panel">
+        <div class="cd-info">
+          <span class="cd-label" id="cd-label">Next Big Release</span>
+          <h3 class="cd-title" id="cd-title"></h3>
+          <span class="cd-meta" id="cd-meta"></span>
+        </div>
+        <div class="cd-clock" role="timer" aria-label="Countdown to the next big release">
+          <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-cap">Days</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-cap">Hours</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-cap">Mins</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-cap">Secs</span></div>
         </div>
       </div>
     </div>
@@ -54,6 +83,7 @@
   <section class="row-section">
     <div class="wrap">
       <div class="section-head">
+        <span class="sec-num" aria-hidden="true">01</span>
         <h2>Latest Videos</h2>
         <a href="https://www.youtube.com/@Trailupbox" target="_blank" rel="noopener">YouTube channel &rarr;</a>
       </div>
@@ -64,6 +94,7 @@
   <section class="row-section">
     <div class="wrap">
       <div class="section-head">
+        <span class="sec-num" aria-hidden="true">02</span>
         <h2>Latest Updates</h2>
         <a href="updates.html">All news &rarr;</a>
       </div>
@@ -71,9 +102,10 @@
     </div>
   </section>
 
-  <section class="row-section">
+  <section class="row-section alt">
     <div class="wrap">
       <div class="section-head">
+        <span class="sec-num" aria-hidden="true">03</span>
         <h2>Top Reviews</h2>
         <a href="reviews.html">All reviews &rarr;</a>
       </div>
@@ -84,6 +116,7 @@
   <section class="row-section">
     <div class="wrap">
       <div class="section-head">
+        <span class="sec-num" aria-hidden="true">04</span>
         <h2>Recommendations</h2>
         <a href="recommendations.html">All recommendations &rarr;</a>
       </div>
@@ -91,9 +124,22 @@
     </div>
   </section>
 
+  <section class="row-section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="sec-num" aria-hidden="true">05</span>
+        <h2>All Videos</h2>
+        <a href="https://www.youtube.com/@Trailupbox" target="_blank" rel="noopener">YouTube channel &rarr;</a>
+      </div>
+      <div class="video-filters" id="video-filters" role="group" aria-label="Filter videos by series"></div>
+      <div class="row-track" id="all-videos-row"></div>
+    </div>
+  </section>
+
   <section class="row-section">
     <div class="wrap">
       <div class="section-head">
+        <span class="sec-num" aria-hidden="true">06</span>
         <h2>Release Dates</h2>
         <a href="release-dates.html">Full calendar &rarr;</a>
       </div>
@@ -101,9 +147,10 @@
     </div>
   </section>
 
-  <section class="row-section">
+  <section class="row-section alt">
     <div class="wrap">
       <div class="section-head">
+        <span class="sec-num" aria-hidden="true">07</span>
         <h2>Celebrity News</h2>
         <a href="celebrity-news.html">All celebrity news &rarr;</a>
       </div>
@@ -115,7 +162,7 @@
     <div class="wrap cta-inner">
       <h2>Watch it on Trailupbox</h2>
       <p>Every big story here becomes a video on the Trailupbox YouTube channel — daily updates, countdowns and honest reviews.</p>
-      <a class="btn" href="https://www.youtube.com/@Trailupbox" target="_blank" rel="noopener">Subscribe on YouTube</a>
+      <a class="btn" href="https://www.youtube.com/@Trailupbox" target="_blank" rel="noopener">Subscribe on YouTube <span class="arr" aria-hidden="true">&rarr;</span></a>
     </div>
   </section>
 </main>
