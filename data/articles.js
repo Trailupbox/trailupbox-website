@@ -30,7 +30,7 @@ const ARTICLES = [
     date: "2026-10-29",
     excerpt:
       "The most powerful man in the universe just found out the plot to kill him runs through his own family. Plus a streaming king dethroned in six days, a record box-office run hitting its first speed bump, and a Friday so stacked you will need a plan.",
-    image: "https://i.ytimg.com/vi/8Dx_xfStMIo/hqdefault.jpg",
+    image: "assets/hires/dune-chani.jpg",
     youtubeId: "8Dx_xfStMIo",
     featured: true,
     tags: ["Dune Part Three", "News Wrap", "Box Office", "Netflix", "Prime Video"],
@@ -132,7 +132,7 @@ const ARTICLES = [
     date: "2026-10-27",
     excerpt:
       "A kaiju classic reborn in 4K. A dinner party that turns into pure chaos. A Korean outbreak film from the director of Train to Busan. Our countdown of the seven best new movies you can watch right now — and exactly where to stream each one.",
-    image: "https://i.ytimg.com/vi/9Ok_xF2Sl5Y/hqdefault.jpg",
+    image: "assets/hires/hope-street.jpg",
     youtubeId: "9Ok_xF2Sl5Y",
     tags: ["Best Movies", "2026", "Recommendations", "Streaming Guide"],
     body: [
@@ -171,7 +171,7 @@ const ARTICLES = [
     date: "2026-10-26",
     excerpt:
       "Ten years after The Wailing, Na Hong-jin returned with the most expensive Korean movie ever made — a monster epic so big and so strange that Cannes split right down the middle. Which side will you land on?",
-    image: "https://i.ytimg.com/vi/1QMrg5F1uDA/hqdefault.jpg",
+    image: "assets/hires/hope-hero.jpg",
     youtubeId: "1QMrg5F1uDA",
     tags: ["Hope", "Review", "Korean Cinema", "Spoiler-Free", "Cannes"],
     body: [
@@ -205,7 +205,7 @@ const ARTICLES = [
     date: "2026-10-23",
     excerpt:
       "Filming on Severance Season 3 has been underway since late July 2026, yet Apple TV+ has not said a single word about a premiere date. Here is everything we actually know — and why the silence might be deliberate.",
-    image: "assets/severance-s3.jpg",
+    image: "assets/hires/severance-corridor.jpg",
     youtubeId: "Tqsed4oVs80",
     tags: ["Severance", "Apple TV+", "Season 3", "Release Date"],
     body: [
@@ -223,7 +223,7 @@ const ARTICLES = [
     date: "2026-10-22",
     excerpt:
       "A wrapped shoot, a Paris chapter nobody will explain, and Winona Ryder joining the cast — Wednesday Season 3 is quietly shaping up to be Netflix's biggest swing yet on the Addams universe.",
-    image: "assets/wednesday.png",
+    image: "assets/hires/wednesday-typewriter.jpg",
     youtubeId: "",
     tags: ["Wednesday", "Netflix", "Jenna Ortega", "Season 3"],
     body: [
@@ -241,7 +241,7 @@ const ARTICLES = [
     date: "2026-10-22",
     excerpt:
       "The Odyssey, a new Spider-Man, Dune: Part Three, a new season of Euphoria and a fresh drama with Robert Pattinson — Zendaya's 2026 calendar is the kind most actors spread across a decade.",
-    image: "assets/zendaya.jpg",
+    image: "assets/hires/zendaya-odyssey.jpg",
     youtubeId: "PMdNOw-_4GE",
     tags: ["Zendaya", "Celebrity News", "Dune", "Spider-Man"],
     body: [
@@ -277,41 +277,174 @@ const ARTICLES = [
    ------------------------------------------------------------ */
 const VIDEOS = [
   {
-    title: "Jumanji's Game ESCAPED Into Our World + Katniss Is BACK + Lupin Hits No. 1 + Next BOND?",
-    label: "News Wrap · Ep 4",
-    id: "NN_kiIAR-8U",
-    url: "https://youtu.be/NN_kiIAR-8U"
-  },
-  {
-    title: "Odyssey, Resident Evil & Hope — Where To Watch: OTT, Digital & Streaming Dates (2026)",
-    label: "Streaming Guide",
-    id: "HS3sYKyHcAY",
-    url: "https://youtu.be/HS3sYKyHcAY"
-  },
-  {
     title: "Top 10 Space Adventure Movies You Must Watch — #1 Broke Everyone",
-    label: "Top 10",
+    series: "Top 10 & Recommendations",
     id: "_5NztN91fQU",
     url: "https://youtu.be/_5NztN91fQU"
   },
   {
-    title: "The Witcher Season 5 — The Final Season Update",
-    label: "Series Update",
-    id: "p-TYjaGZZfk",
-    url: "https://youtu.be/p-TYjaGZZfk"
+    title: "Jumanji's Game ESCAPED Into Our World + Katniss Is BACK + Lupin Hits No. 1 + Next BOND?",
+    series: "Nightly News",
+    label: "Ep 4",
+    id: "NN_kiIAR-8U",
+    url: "https://youtu.be/NN_kiIAR-8U"
   },
   {
     title: "JUMANJI: OPEN WORLD New Trailer — The Rock's New Player Is NOT Who You Think!",
-    label: "Short",
+    series: "Shorts",
     id: "abS_RM34ifY",
     url: "https://youtube.com/shorts/abS_RM34ifY"
   },
   {
-    title: "Zendaya in Every Movie — But HOW?",
-    label: "Short",
+    title: "Odyssey, Resident Evil & Hope — Where To Watch: OTT, Digital & Streaming Dates (2026)",
+    series: "Series Updates & Release Dates",
+    id: "HS3sYKyHcAY",
+    url: "https://youtu.be/HS3sYKyHcAY"
+  },
+  {
+    title: "Rajinikanth Broke His OWN Record! 🔥 Jailer 2 Beats 2.0",
+    series: "Shorts",
+    id: "LtTEjD3UqxE",
+    url: "https://youtube.com/shorts/LtTEjD3UqxE"
+  },
+  {
+    title: "The Terminal List S2 DETHRONES Stephen King's Carrie at #1 on Prime Video!",
+    series: "Shorts",
+    id: "TS-iBwEeYBI",
+    url: "https://youtube.com/shorts/TS-iBwEeYBI"
+  },
+  {
+    title: "He Attended His Own Press Conference… From The ARMY?! | Dead-End Job (Netflix)",
+    series: "Shorts",
+    id: "qqhjqALjeSM",
+    url: "https://youtube.com/shorts/qqhjqALjeSM"
+  },
+  {
+    title: "DUNE: PART THREE Final Trailer — Chani Is At The Heart Of The Plot Against Paul",
+    series: "Series Updates & Release Dates",
+    id: "W8nAKqzlPDA",
+    url: "https://youtu.be/W8nAKqzlPDA",
+    art: "assets/hires/dune-paul.jpg"
+  },
+  {
+    title: "DUNE 3 Final Trailer: His Own Family Is Plotting Against Him + Chris Pratt DETHRONES Stephen King",
+    series: "Nightly News",
+    label: "Ep 3",
+    id: "8Dx_xfStMIo",
+    url: "https://youtu.be/8Dx_xfStMIo",
+    art: "assets/hires/dune-scytale.jpg"
+  },
+  {
+    title: "BEST MOVIES OF 2026 | 7 New Movies You Can Watch Right Now",
+    series: "Top 10 & Recommendations",
+    id: "9Ok_xF2Sl5Y",
+    url: "https://youtu.be/9Ok_xF2Sl5Y",
+    art: "assets/hires/hope-street.jpg"
+  },
+  {
+    title: "HOPE (2026) REVIEW — NO SPOILERS | Is The Most Expensive Korean Movie Ever Worth It?",
+    series: "Reviews",
+    id: "1QMrg5F1uDA",
+    url: "https://youtu.be/1QMrg5F1uDA",
+    art: "assets/hires/hope-hero.jpg"
+  },
+  {
+    title: "Jailer 2 BEATS Rajinikanth's Own 2.0 Record! + Keanu Reeves STEALS Reacher Star's Netflix Role",
+    series: "Nightly News",
+    label: "Ep 2",
+    id: "joyxoDfopYQ",
+    url: "https://youtu.be/joyxoDfopYQ"
+  },
+  {
+    title: "HOPE Ending Explained — The Monster Was Hiding A Secret + Part 2 Release Date",
+    series: "Reviews",
+    id: "xZSjVKfHi54",
+    url: "https://youtu.be/xZSjVKfHi54",
+    art: "assets/hires/hope-car.jpg"
+  },
+  {
+    title: "Sandra Hüller SECRETLY Joins DOOMSDAY + CLAYFACE Sets DC's Worst Record Ever",
+    series: "Nightly News",
+    label: "Ep 1",
+    id: "IewqA7LUvG8",
+    url: "https://youtu.be/IewqA7LUvG8"
+  },
+  {
+    title: "A New Alien Movie Is Officially Happening… But It's NOT the Sequel You Expected",
+    series: "Shorts",
+    id: "DzVEFcW1D8w",
+    url: "https://youtube.com/shorts/DzVEFcW1D8w"
+  },
+  {
+    title: "Top 10 Best Heist Movies of All Time — #1 Is a Masterclass in Pure Genius",
+    series: "Top 10 & Recommendations",
+    id: "n1P43h3lTJ4",
+    url: "https://youtu.be/n1P43h3lTJ4"
+  },
+  {
+    title: "All of Us Are Dead Season 2 (2027) — Netflix Just Confirmed What Fans Begged For | Oct 24",
+    series: "K-Drama & Netflix",
+    id: "rZT0V1chgR8",
+    url: "https://youtu.be/rZT0V1chgR8"
+  },
+  {
+    title: "Cerita Lila — 1 Million Watched This Ghost Story... Most Cried 😢",
+    series: "Shorts",
+    id: "uSmu1x-vW9U",
+    url: "https://youtube.com/shorts/uSmu1x-vW9U"
+  },
+  {
+    title: "Cerita Lila (2026) Review — 1 Million People Watched This Ghost Story. Were They Right?",
+    series: "Reviews",
+    id: "a76pCEWfNmE",
+    url: "https://youtu.be/a76pCEWfNmE",
+    art: "assets/hires/cerita-house.jpg"
+  },
+  {
+    title: "Severance Season 3 Release Date — Why Apple Won't Announce It",
+    series: "Series Updates & Release Dates",
+    id: "Tqsed4oVs80",
+    url: "https://youtu.be/Tqsed4oVs80",
+    art: "assets/hires/severance-keyart.jpg"
+  },
+  {
+    title: "ZENDAYA in EVERY 2026 Movie?! The Odyssey, Spider-Man, Dune 3 — How Is This Possible?",
+    series: "Shorts",
     id: "PMdNOw-_4GE",
-    url: "https://youtu.be/PMdNOw-_4GE"
-  }
+    url: "https://youtube.com/shorts/PMdNOw-_4GE",
+    art: "assets/hires/zendaya-portrait.jpg"
+  },
+  {
+    title: "The Witcher Season 5 Release Date — Why Netflix Is Staying Silent",
+    series: "Series Updates & Release Dates",
+    id: "p-TYjaGZZfk",
+    url: "https://youtu.be/p-TYjaGZZfk",
+    art: "assets/hires/witcher-keyart.jpg"
+  },
+  {
+    title: "Top 7 Underrated Web Series (2026) You Missed — #1 Is a Masterpiece",
+    series: "Top 10 & Recommendations",
+    id: "u5Ijhz7QP10",
+    url: "https://youtu.be/u5Ijhz7QP10"
+  },
+  {
+    title: "Top 10 Most Brutal Action Movies 2026 | Statham, Adkins, Bautista, Jackie Chan",
+    series: "Top 10 & Recommendations",
+    id: "TQd4P1csDO4",
+    url: "https://youtu.be/TQd4P1csDO4"
+  },
+  {
+    title: "All of Us Are Dead Season 2 (2027) Update! Oct 24 Netflix Event | Trailupbox",
+    series: "K-Drama & Netflix",
+    id: "4J5v8O-MVP0",
+    url: "https://youtu.be/4J5v8O-MVP0"
+  },
+  {
+    title: "Top 10 Best Movies To Watch Alone 2026 | Netflix, HBO Max, Paramount+ | Trailupbox",
+    series: "Top 10 & Recommendations",
+    id: "FwMUJIFI7a8",
+    url: "https://youtu.be/FwMUJIFI7a8"
+  },
 ];
 
 /* ------------------------------------------------------------
