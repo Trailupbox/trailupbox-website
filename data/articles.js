@@ -24,6 +24,191 @@
 
 const ARTICLES = [
   {
+    slug: "patrick-stewart-tribute-final-performance",
+    title: "Sir Patrick Stewart (1940–2026): Farewell to Captain Picard — and One Final Performance Still to Come",
+    category: "News",
+    date: "2026-10-30",
+    excerpt:
+      "Sir Patrick Stewart has died at 86. The world says goodbye to Captain Picard and Professor X — but his farewell performance, already filmed for Avengers: Doomsday, is still to come this December.",
+    image: "assets/patrick-stewart.jpg",
+    credit: "Getty Images",
+    tags: ["Patrick Stewart", "Star Trek", "X-Men", "Avengers Doomsday", "Tribute"],
+    faq: [
+      { q: "When did Patrick Stewart die?",
+        a: "Sir Patrick Stewart died on Wednesday, 28 October 2026, at his home in Los Angeles, aged 86. His death was announced the following day by his family." },
+      { q: "What was Patrick Stewart's final performance?",
+        a: "His farewell performance as Professor X in Avengers: Doomsday is already filmed and still to come — the film arrives in theatres on 18 December 2026. As Ian McKellen put it: his farewell performance is yet to be seen." },
+      { q: "What roles was Patrick Stewart best known for?",
+        a: "Captain Jean-Luc Picard in Star Trek: The Next Generation and Professor Charles Xavier in the X-Men films — two roles that defined him for generations of fans." }
+    ],
+    body: [
+      "Sir Patrick Stewart, the beloved Captain Jean-Luc Picard of *Star Trek* and Professor Charles Xavier of the *X-Men*, died on Wednesday at his home in Los Angeles, aged 86. The news was announced on Thursday, and within hours the tributes told the story of a career — and a man — who meant an enormous amount to an enormous number of people.",
+      "For seven seasons of *Star Trek: The Next Generation* and beyond, Stewart's Picard was the captain who led with intellect and conscience. Then, in 2000, he became Professor X, the calm centre of the X-Men films, and held that role across two decades of superhero cinema. Few actors get one defining role. He had two, and he honoured both.",
+      "## The Tributes — and the Farewell Still to Come",
+      "Ian McKellen led the tributes, with William Shatner, Hugh Jackman and Marvel Studios among the many who paid their respects. McKellen's words carried one extraordinary detail: 'His farewell performance in Avengers: Doomsday is yet to be seen.' Stewart's final turn as Professor X was filmed before his death, and the film arrives in theatres on December 18 — one last performance that audiences still get to experience for the first time.",
+      "The family statement shared that Stewart's final journey involved Alzheimer's disease and Lewy body dementia, and that he was in the care of his wife, Sunny Ozell. He is survived by Sunny and his children, Daniel and Sophie. Rest in peace, Captain — and thank you. We will see you once more in December.",
+      "*(Photos: Getty Images)*"
+    ]
+  },
+  {
+    slug: "avatar-season-3-already-filmed-2027",
+    title: "Avatar Season 3 Is Already Filmed — So Why Is Netflix Hiding It Until 2027?",
+    category: "News",
+    date: "2026-10-30",
+    excerpt:
+      "The final season of Netflix's live-action Avatar wrapped filming in November 2025 and has been finished for almost a year. Netflix has shown exactly one photo, released no trailer, and will only say '2027'. Here is everything actually confirmed.",
+    image: "assets/avatar-ozai-first-look.png",
+    tags: ["Avatar The Last Airbender", "Netflix", "Season 3", "Release Date"],
+    faq: [
+      { q: "When does Avatar Season 3 come out?",
+        a: "Netflix has confirmed only the year: 2027. The streamer announced the window on 3 September 2026 — no month, no exact date and no trailer yet. A summer 2027 slot has been reported by scooper outlets, but that is reported, not announced." },
+      { q: "Has Avatar Season 3 finished filming?",
+        a: "Yes. Seasons 2 and 3 were filmed back-to-back, and Season 3 wrapped in November 2025 — the final season has been finished for almost a year while Netflix holds it back." },
+      { q: "Is Avatar Season 3 the final season?",
+        a: "Yes. Netflix renewed the show for Seasons 2 and 3 together in March 2024, and Season 3 was always planned as the third and final season, completing the story of the animated series' three Books." },
+      { q: "Is there a trailer for Avatar Season 3?",
+        a: "No. No Season 3 trailer or teaser exists yet. The only Season 3 visual Netflix has released is a single first-look photo of Daniel Dae Kim as Fire Lord Ozai." }
+    ],
+    body: [
+      "Here is the strangest release story in streaming right now. The final season of Netflix's live-action *Avatar: The Last Airbender* is not in production — it finished filming in **November 2025**, almost a year ago. Netflix is holding it until 2027, having shown fans exactly one photograph and no trailer at all.",
+      "## What Is Actually Confirmed",
+      "Start with what is fact. Netflix renewed *Avatar* for Seasons 2 and 3 together on 6 March 2024, two weeks after Season 1 premiered, and Season 3 was always planned as the **final season**, completing the adaptation of the animated series' three Books. The two seasons were shot back-to-back, and Season 3 wrapped in November 2025, with the cast marking the moment in a wrap photo shared by Netflix.",
+      "Season 2 premiered on 25 June 2026, all seven episodes at once, introduced Toph, and ended on the animated series' most famous gut-punch — Azula striking Aang down with lightning in the Avatar State, with Katara saving him using the Spirit Oasis water. Season 3 picks up from exactly there.",
+      "## The 2027 Window — and the One Photo",
+      "On 3 September 2026, Netflix finally spoke: the final season arrives in **2027**. No month. No date. No trailer. The announcement came with a single first-look still — Daniel Dae Kim as Fire Lord Ozai, captioned 'It's time to take on the Fire Nation' — still the only official Season 3 visual in existence. Scooper outlets report a summer 2027 target, in line with Season 2's late-June slot, but Netflix has announced nothing more specific. Anyone giving you an exact day is guessing.",
+      "Why the hold? Season 2's opening was softer than Season 1's in the reported Top 10 figures, and spacing a finished final season into a clear 2027 window is what a streamer does with a franchise it still values. That is analysis, not a Netflix statement.",
+      "## What Season 3 Brings",
+      "The final season adapts Book Three: Fire — the Gaang goes deeper into the Fire Nation, Aang must master firebending, and everything builds to the Sozin's Comet showdown with Ozai. Two confirmed new faces carry serious fan weight: **Jon Jon Briones as Piandao**, the swordmaster who trains Sokka, and **Tantoo Cardinal as Hama** — which means bloodbending, the darkest bending form, enters live action. The episode count is reported to be seven, like Season 2, though Netflix has not confirmed it.",
+      "A finished final season, a confirmed year, one photograph, and silence. When Netflix finally moves, it will land loudly — and we will update this page the moment it does.",
+      "*Our full Avatar Season 3 update video is coming to the Trailupbox channel.*"
+    ]
+  },
+  {
+    slug: "eiza-gonzalez-monse-time100-next-gala",
+    title: "Eiza González in a Backless Silver Monse Dress Held Up by a Single Strap at the TIME100 Next Gala",
+    category: "Celebrity News",
+    date: "2026-10-30",
+    excerpt:
+      "A backless silver sequin halter dress anchored by one single strap — Eiza González, herself a 2026 TIME100 Next honouree, delivered the gala's boldest engineering feat in Monse.",
+    image: "assets/eiza-gonzalez.jpg",
+    credit: "Getty Images",
+    tags: ["Eiza González", "TIME100 Next", "Red Carpet", "New York"],
+    faq: [
+      { q: "What did Eiza González wear at the TIME100 Next Gala 2026?",
+        a: "A backless silver sequined halter dress by Monse (Spring/Summer 2027), anchored by a single strap — worn with Aquazzura shoes and David Yurman jewellery, styled by Elizabeth Saltzman." },
+      { q: "Who designed Eiza González's TIME100 Next dress?",
+        a: "Monse — the New York label's Spring/Summer 2027 design, a silver sequin halter dress with an open back held by one strap." },
+      { q: "Why was Eiza González at the TIME100 Next Gala?",
+        a: "She is one of the 2026 TIME100 Next honourees — the gala at Current at Chelsea Piers in New York celebrated this year's list." }
+    ],
+    body: [
+      "Eiza González stepped out in Monse at the TIME100 Next Gala in New York — and the dress was an engineering feat as much as a fashion moment. The silver sequined halter dress is entirely backless, anchored by a single strap, and it photographed from behind as dramatically as it did from the front.",
+      "The gown is from Monse's Spring/Summer 2027 line, styled by Elizabeth Saltzman and finished with Aquazzura shoes and David Yurman jewellery. It is a high-risk silhouette — one strap, no back, full sequins — and González wore it with the ease of someone who has never once worried about a red carpet.",
+      "The context made it land harder: González was not just a guest. She is one of the 2026 TIME100 Next honourees, celebrated at the gala at Current at Chelsea Piers alongside this year's class of rising names across film, music and culture. When the night is partly yours, the look has to rise to it — and a molten-silver, single-strap statement is exactly how you do that. Expect this one to live on best-dressed lists well past the weekend.",
+      "*(Photos: Getty Images)*"
+    ]
+  },
+  {
+    slug: "joey-king-miu-miu-time100-next-gala",
+    title: "Joey King in Custom Mint Miu Miu at the TIME100 Next Gala",
+    category: "Celebrity News",
+    date: "2026-10-30",
+    excerpt:
+      "A mint-green off-the-shoulder gown scattered with embellishments, made custom by Miu Miu — Joey King, a 2026 TIME100 Next honouree, went full old-Hollywood softness in New York.",
+    image: "assets/joey-king.jpg",
+    credit: "Getty Images",
+    tags: ["Joey King", "TIME100 Next", "Miu Miu", "Red Carpet"],
+    faq: [
+      { q: "What did Joey King wear at the TIME100 Next Gala?",
+        a: "A custom Miu Miu mint-green off-the-shoulder gown scattered with embellishments, worn with Forever Diamond NY jewellery and styled by Jared Eng." },
+      { q: "Who designed Joey King's mint gown?",
+        a: "Miu Miu — the gown was made custom for King for the gala, in a soft mint green with embellishments across the bodice and skirt." },
+      { q: "Is Joey King a TIME100 Next honouree?",
+        a: "Yes — King is one of the 2026 TIME100 Next honourees, and the gala at Current at Chelsea Piers in New York celebrated this year's list." }
+    ],
+    body: [
+      "Joey King stepped out in custom Miu Miu at the TIME100 Next Gala in New York — a mint-green off-the-shoulder gown scattered with embellishments, in the kind of soft, romantic register that stood out all the more on a night of high-shine statements.",
+      "The gown was made custom for King by Miu Miu, and styled by Jared Eng with Forever Diamond NY jewellery. Off-the-shoulder necklines are having a long moment, but the mint colourway is the detail that did the work here — pale, fresh and deliberately gentle against the gala's black-tie sea of metallics and black.",
+      "Like several of the night's standout arrivals, King was there as more than a guest: she is one of the 2026 TIME100 Next honourees. It has been a long, deliberate climb from child actor to one of the most in-demand leads of her generation, and the industry keeps finding formal ways to say so. A custom gown from one of fashion's most-watched houses, for a night honouring her — that is the level she is playing at now. It also continued a quietly excellent run of gala appearances from King this season, each one more assured than the last.",
+      "*(Photos: Getty Images)*"
+    ]
+  },
+  {
+    slug: "kim-kardashian-schiaparelli-alls-fair-premiere",
+    title: "Kim Kardashian's Schiaparelli Gown Was Moulded From Liquid Silicone for the All's Fair Premiere",
+    category: "Celebrity News",
+    date: "2026-10-30",
+    excerpt:
+      "A plunging cream gown moulded from liquid silicone with hand-cut fringe over sequinned tulle — Kim Kardashian's Schiaparelli couture at the All's Fair Season 2 premiere in Mexico City was part dress, part sculpture.",
+    image: "assets/kim-kardashian.jpg",
+    credit: "Getty Images",
+    tags: ["Kim Kardashian", "All's Fair", "Schiaparelli", "Premiere"],
+    faq: [
+      { q: "What did Kim Kardashian wear to the All's Fair Season 2 premiere?",
+        a: "Schiaparelli Fall 2026 couture by Daniel Roseberry — a plunging cream gown moulded from liquid silicone, with hand-cut fringe layered over sheer sequinned tulle, styled by Law Roach." },
+      { q: "When does All's Fair Season 2 premiere?",
+        a: "All's Fair Season 2 premieres on 4 November on Hulu. The Mexico City premiere event was held on 28 October 2026 at Soho House." },
+      { q: "Who designed Kim Kardashian's liquid silicone gown?",
+        a: "Daniel Roseberry for Schiaparelli — it is Look 4 from the house's Fall 2026 couture collection." }
+    ],
+    body: [
+      "Kim Kardashian stepped out in Schiaparelli couture at the *All's Fair* Season 2 premiere in Mexico City — a plunging cream gown moulded from liquid silicone, finished with hand-cut fringe layered over sheer sequinned tulle. It is less a dress than a piece of sculpture that happens to be wearable.",
+      "The gown is Look 4 from Schiaparelli's Fall 2026 couture collection by Daniel Roseberry, styled by Law Roach. The liquid-silicone construction is the story: the fabric is moulded to the body rather than sewn around it, which is why the silhouette looks poured rather than fitted. Under the fringe, the sheer sequinned tulle keeps the whole thing shimmering as it moves.",
+      "The premiere, held at Soho House in Mexico City on 28 October, launched the second season of Ryan Murphy's legal drama, in which Kardashian leads the ensemble. Season 2 premieres on **4 November on Hulu**. Kardashian's red-carpet strategy for this show has been consistent — couture with a concept, never just a pretty dress — and a gown made of moulded silicone for a show about high-gloss power is about as on-brief as it gets.",
+      "*(Photos: Getty Images)*"
+    ]
+  },
+  {
+    slug: "lupita-nyongo-brandon-maxwell-wsj-innovator-awards",
+    title: "Lupita Nyong'o Makes Black Velvet Irresistible in Brandon Maxwell at the WSJ. Innovator Awards",
+    category: "Celebrity News",
+    date: "2026-10-30",
+    excerpt:
+      "A black silk-velvet gown with a sculptural neckline, Bvlgari jewels and a red lip — Lupita Nyong'o's Brandon Maxwell moment at MoMA was a masterclass in doing more with less.",
+    image: "assets/lupita-nyongo.jpg",
+    credit: "Getty Images",
+    tags: ["Lupita Nyong'o", "WSJ Innovator Awards", "Brandon Maxwell", "New York"],
+    faq: [
+      { q: "What did Lupita Nyong'o wear at the WSJ. Innovator Awards 2026?",
+        a: "The 'Farren' black silk-velvet maxi dress from Brandon Maxwell's Fall 2026 line, with a sculptural neckline — finished with Bvlgari jewels, an Olga Berg clutch and Gianvito Rossi sandals, styled by Micaela Erlanger." },
+      { q: "Who designed Lupita Nyong'o's black velvet gown?",
+        a: "Brandon Maxwell — the 'Farren' dress from his Fall 2026 collection, in black silk velvet with a sculptural neckline." },
+      { q: "What did Lupita Nyong'o do at the Innovator Awards?",
+        a: "Beyond the red carpet, she took the stage during the ceremony at MoMA to present the Literature award to author Marlon James." }
+    ],
+    body: [
+      "Lupita Nyong'o stepped out in Brandon Maxwell at the WSJ. Magazine Innovator Awards at MoMA in New York — a black silk-velvet gown with a sculptural neckline, finished with a red lip and Bvlgari jewels. On a night full of fashion risk-taking, hers was the quiet masterclass.",
+      "The dress is the 'Farren' from Brandon Maxwell's Fall 2026 line — black silk velvet, a maxi silhouette, and a neckline that does the sculptural work a necklace would normally do. Styled by Micaela Erlanger with an Olga Berg clutch and Gianvito Rossi sandals, the look makes its case through restraint: one fabric, one colour, one strong line, and styling that knows exactly when to stop.",
+      "Nyong'o was not only on the carpet — she took the stage during the ceremony to present the Literature award to Marlon James, one of the night's honourees. The Innovator Awards remain one of the few rooms where fashion, art and industry genuinely mix, and Nyong'o — an Oscar winner who moves between all three worlds — is precisely the kind of presence the night is built around. Black velvet has rarely looked this deliberate.",
+      "*(Photos: Getty Images)*"
+    ]
+  },
+  {
+    slug: "cynthia-erivo-erdem-abt-fall-gala",
+    title: "The Night Was Hers: Cynthia Erivo Honoured at the American Ballet Theatre Fall Gala in Erdem",
+    category: "Celebrity News",
+    date: "2026-10-30",
+    excerpt:
+      "A tailored black jacket and white shirt over a sweeping floral pannier skirt — Cynthia Erivo wore Erdem to the gala held in her honour, where Debbie Allen presented her award on stage.",
+    image: "assets/cynthia-erivo.jpg",
+    credit: "Getty Images for American Ballet Theatre",
+    tags: ["Cynthia Erivo", "American Ballet Theatre", "Gala", "New York"],
+    faq: [
+      { q: "Why was Cynthia Erivo honoured at the American Ballet Theatre Fall Gala?",
+        a: "The ABT Fall Gala at the David H. Koch Theater at Lincoln Center was held in Erivo's honour, recognising her impact across stage and screen; Debbie Allen presented her with the award on stage." },
+      { q: "What did Cynthia Erivo wear to the ABT Fall Gala?",
+        a: "Erdem Spring 2027 — a tailored black jacket and crisp white shirt over a sweeping floral-embellished pannier skirt, styled by Jason Bolden." },
+      { q: "Who presented Cynthia Erivo's award?",
+        a: "Debbie Allen — the legendary dancer and choreographer presented Erivo's honour on stage during the gala." }
+    ],
+    body: [
+      "Some red carpets you attend. This one was held for her. Cynthia Erivo stepped out in Erdem at the American Ballet Theatre Fall Gala at the David H. Koch Theater at Lincoln Center — a night formally held in her honour, under an 'Angels and Demons' theme.",
+      "The look, from Erdem's Spring 2027 line and styled by Jason Bolden, was pure Erivo theatre: a tailored black jacket and crisp white shirt on top, and below, a sweeping floral-embellished pannier skirt with genuine eighteenth-century drama in its silhouette. It is menswear tailoring and ballet-costume romance in a single outfit — a fitting equation for a performer whose career has always lived between disciplines.",
+      "The evening's defining image came on stage, where Debbie Allen — a legend of American dance — presented Erivo with her honour. For an artist who has conquered Broadway, film and music, recognition from the ballet world, delivered by one of its defining figures, marks a different kind of arrival. Erivo's year keeps widening; nights like this are the industry keeping score.",
+      "*(Photos: Getty Images for American Ballet Theatre)*"
+    ]
+  },
+  {
     slug: "dune-part-three-final-trailer-news-wrap",
     title: "Dune: Part Three's Final Trailer Puts a Target on the Emperor — and Chris Pratt Just Took Stephen King's Crown",
     category: "News",
