@@ -24,6 +24,138 @@
 
 const ARTICLES = [
   {
+    slug: "top-10-horror-movies-netflix-2026",
+    title: "Top 10 Horror Movies on Netflix (2026) — The Halloween Countdown",
+    category: "Recommendation",
+    date: "2026-11-01",
+    excerpt:
+      "Ten horror movies on Netflix worth your Halloween night — from a Taiwanese curse shot like a news broadcast to the twist ending nobody saw coming. Counted down, with the scores, the scares and the one everyone ignored.",
+    image: "assets/top-10-horror-netflix.jpg",
+    youtubeId: "ccM4G6CMMrQ",
+    featured: true,
+    tags: ["Netflix", "Horror", "Top 10", "Halloween", "Recommendations"],
+    faq: [
+      { q: "What is the best horror movie on Netflix right now?",
+        a: "The Sixth Sense tops our countdown — a 1999 classic with six Oscar nominations and an 8.2 IMDb score that still out-scares most modern releases. For pure fear, Taiwan's Incantation and Indonesia's Grave Torture are the scariest picks on the list." },
+      { q: "Which Netflix horror movies are actually scary?",
+        a: "Incantation (2022) is found-footage dread built around a real curse ritual, Grave Torture (2024) from Joko Anwar is slow-burn Indonesian terror, and May the Devil Take You (2018) is relentless demonic horror from Timo Tjahjanto. All three are Netflix originals available worldwide." },
+      { q: "Are all of these movies available on Netflix in every country?",
+        a: "The Netflix originals — The Babysitter, Grave Torture, May the Devil Take You, Blood Red Sky, The Call, Apostle and Incantation — stream worldwide. The licensed titles (Halloween Kills, World War Z, The Sixth Sense) rotate by region, so check your local catalogue." },
+      { q: "What horror movie should I watch first from this list?",
+        a: "Want a twist: The Sixth Sense. Want scale: World War Z. Want a hidden gem: South Korea's The Call, a time-bending thriller rated 7.1 on IMDb that most viewers scrolled straight past." }
+    ],
+    body: [
+      "Halloween night, the Netflix catalogue, and one question: which of these is actually worth your fear? We counted down the ten best horror movies on Netflix right now — the ignored, the underrated and the undeniable — and ranked them by the only metric that matters: how long they stay with you after the credits.",
+      "## The Countdown",
+      "**#10 — The Babysitter (2017).** Samara Weaving leads a babysitter-satanic-cult horror-comedy that knows exactly how much fun it is having. IMDb 6.4 — and far better than its reputation.",
+      "**#9 — Grave Torture (2024).** Joko Anwar, the director of *Impetigore*, turns a childhood trauma into a grave-side nightmare. Indonesian horror at its most patient and most cruel.",
+      "**#8 — May the Devil Take You (2018).** Timo Tjahjanto before *The Night Comes for Us* fame went full *Evil Dead* — a dying father's house, a family inheritance, and demons that do not negotiate. IMDb 5.9 does not prepare you.",
+      "**#7 — Halloween Kills (2021).** Michael Myers survives the fire and Haddonfield finally fights back. The middle chapter of the new trilogy — licensed, so availability varies by region.",
+      "**#6 — Blood Red Sky (2021).** A mother, her son, a hijacked plane — and a secret that turns a hostage thriller into a vampire siege at 38,000 feet. Germany's genre gift to Netflix. IMDb 6.1.",
+      "**#5 — The Call (2020).** Two women, one house, twenty years apart, connected by a phone. South Korea's time-bending thriller is the smartest film on this list. IMDb 7.1.",
+      "**#4 — Apostle (2018).** *The Raid* director Gareth Evans sends Dan Stevens into a 1905 religious cult to rescue his sister. Folk horror with a forge, a goddess and unforgettable machinery. IMDb 6.3.",
+      "**#3 — Incantation (2022).** Taiwan's highest-grossing horror film ever — a mother, a cursed ritual, and found footage that asks *you* to chant along. That is not a gimmick. That is the trap. IMDb 6.2.",
+      "**#2 — World War Z (2013).** Brad Pitt races a global outbreak in the biggest zombie film ever made — $540 million at the box office, and the horde scenes still have no equal. IMDb 7.0. Licensed title; it rotates by region.",
+      "**#1 — The Sixth Sense (1999).** Six Oscar nominations. An 8.2 on IMDb. A child who sees the dead, a psychologist who cannot reach his own wife, and an ending that rewired horror forever. Twenty-seven years on, nothing on this list touches it.",
+      "Watch the full countdown — every trailer moment, every score — in our Halloween Special video above, and tell us which one we ranked wrong."
+    ]
+  },
+  {
+    slug: "daily-wrap-ep-6-documentary-beats-dc",
+    title: "Did a Documentary Just Beat a DC Movie? Dead-End Job Reviews Are In + Mario Closes November — The Daily Wrap Ep 6",
+    category: "News",
+    date: "2026-11-01",
+    excerpt:
+      "Dead-End Job's first reviews land with one shared flaw, a three-hour Elizabeth Holmes documentary takes Friday from DC's Clayface, and the six Netflix November dates that matter — all in Episode 6 of The Daily Wrap.",
+    image: "assets/daily-wrap-ep6.jpg",
+    youtubeId: "7wBQ-bC7J0s",
+    tags: ["Clayface", "Dead-End Job", "Netflix", "Box Office", "The Daily Wrap"],
+    faq: [
+      { q: "Did the Elizabeth Holmes documentary beat Clayface at the box office?",
+        a: "On Friday, yes — You Can See Everything grossed an estimated $3.2M against Clayface's $3.1M, from roughly 800 fewer screens. For the full weekend, Deadline forecasts the documentary wins its second weekend at about $19.5M, while Clayface is forecast between $9.6M (Deadline) and $12.4M (Box Office Theory). These are forecasts and Friday estimates — the official numbers land Monday." },
+      { q: "Is Dead-End Job worth watching? What did reviewers say?",
+        a: "The first reviews are positive with one shared complaint: Heaven of Horror scored it 4/5, But Why Tho? 7/10, Midgard Times 6/10, and Decider's verdict was STREAM IT. Every review names the same flaw — inconsistent CGI." },
+      { q: "When does Black Doves Season 2 come to Netflix?",
+        a: "Black Doves Season 2 arrives on Netflix on 5 November — the first of six November dates that matter, closing with Super Mario Galaxy on 30 November." },
+      { q: "How much has Clayface made at the box office?",
+        a: "Clayface opened to $24.0M and finished its first week at $33.6M domestic, against a production budget of $44M — which is why its second-weekend drop is the number everyone is watching." }
+    ],
+    body: [
+      "Episode 6 of The Daily Wrap leads with the reviews everyone waited for, and closes with the strangest box-office fight of the year. Here is the whole day, wrapped fast.",
+      "## Dead-End Job — The First Reviews Are In",
+      "Netflix's Korean job-hunt thriller *Dead-End Job* — the one where the pay is fifty times normal — has its first verdicts. **Heaven of Horror: 4/5. But Why Tho?: 7/10. Midgard Times: 6/10. Decider: STREAM IT.** Four outlets, four recommendations — and one flaw named by all of them: CGI that swings between excellent and unfinished. The mystery carries it anyway.",
+      "## The Trailers: Cassel's Quasimodo and Erivo's One-Woman Storm",
+      "Vincent Cassel becomes Quasimodo in *The Hunchback, Soul of Paris* (Netflix, 27 November), and Cynthia Erivo owns the stage in *Prima Facie*, reaching UK and Irish cinemas on 13 November.",
+      "## Netflix November — The Six Dates That Matter",
+      "**Black Doves Season 2 — 5 November. Possible Love — 6 November. Heartland — 13 November. Mosquito Bowl — 25 November. The Hunting Wives Season 2 — 26 November. Super Mario Galaxy — 30 November.** Our full November preview video breaks down every one of them.",
+      "## The Main Event: A Documentary Is Beating a DC Movie",
+      "Clayface opened to $24.0M and closed its first week at $33.6M domestic on a $44M budget. Then came Friday: the Elizabeth Holmes documentary *You Can See Everything* — three hours long, playing on about 800 fewer screens — took the day, $3.2M to $3.1M. Deadline forecasts the documentary wins the Halloween weekend outright at roughly $19.5M in its second weekend, while Clayface falls somewhere between $9.6M and $12.4M depending on whose model you trust. Forecasts are not results — the real numbers land Monday, and tomorrow's Wrap opens with the answer.",
+      "Plus, in quick-fire: our spoiler-free *Apocalypse Z: New World* verdict, *Dexter: Resurrection* Season 2's streaming move, day two of the Patrick Stewart tributes, and the Bond watch — day nine of the wait. Watch the full episode above."
+    ]
+  },
+  {
+    slug: "apocalypse-z-new-world-review",
+    title: "Apocalypse Z: New World Review — Bigger Hordes, But Is It Better Than Part 1?",
+    category: "Review",
+    date: "2026-11-01",
+    excerpt:
+      "The sequel to Prime Video's record-breaking zombie hit is bigger in every way — bigger hordes, bigger army, bigger budget. Our spoiler-free verdict on whether bigger means better.",
+    image: "assets/apocalypse-z-new-world-review.jpg",
+    youtubeId: "VoP6E67g5Pg",
+    tags: ["Apocalypse Z", "Prime Video", "Review", "Zombie", "Spoiler-Free"],
+    faq: [
+      { q: "Is Apocalypse Z: New World better than Part 1?",
+        a: "It is bigger — but not better. The scale, the hordes and the military hardware all level up, yet the sequel trades the first film's pounding heartbeat for spectacle. Our verdict: bigger army, smaller heartbeat." },
+      { q: "Where can I watch Apocalypse Z: New World?",
+        a: "Apocalypse Z: New World is streaming on Prime Video worldwide — it released globally on 30 October 2026." },
+      { q: "What did the critics think of Apocalypse Z: New World?",
+        a: "Critics are split right down the middle: Cinemanía gave it 3.5/5, the New York Times called it 'efficient, but familiar', while Heaven of Horror and Kwaves and Beyond both scored it 2/5." },
+      { q: "Was Apocalypse Z Part 1 a hit?",
+        a: "A phenomenon. Part 1 became Prime Video's most-watched international Original movie ever at the time of its release — a record later surpassed only by Your Fault — and reached number one in 89 countries according to reports." }
+    ],
+    body: [
+      "Part 1 of *Apocalypse Z* came from nowhere and became Prime Video's most-watched international Original movie ever at the time — a Spanish zombie film that beat the world. *New World*, directed by Carles Torrens with Carlos Alcaide returning, arrives with everything a sequel is supposed to have: more infected, more soldiers, more money on screen. The question is what it lost on the way.",
+      "## What the World Is Saying",
+      "The audience split mirrors the film itself. Fans of scale are fed — the horde sequences are genuinely enormous, staged with a confidence the first film could not afford. But a loud share of returning viewers say the same thing in different words: the dread is thinner, the silence is gone, and the man-and-his-cat intimacy that made Part 1 hurt has been replaced by hardware.",
+      "## What the Critics Say",
+      "**Cinemanía: 3.5/5** — the warmest of the major notices. **The New York Times: 'efficient, but familiar'** — praise and warning in four words. **Heaven of Horror: 2/5.** **Kwaves and Beyond: 2/5.** No Rotten Tomatoes consensus exists yet — anyone quoting you one is inventing it.",
+      "## Our Take",
+      "New World is a well-built machine. The set pieces work, the escalation is real, and when the horde moves, it moves like weather. But Part 1 understood something this film keeps forgetting: a zombie movie is not about the size of the army outside the door — it is about the sound of one man's breathing behind it. The sequel keeps choosing the army.",
+      "## The Verdict",
+      "**Bigger army. Smaller heartbeat.** All muscle, slightly less soul. If you loved Part 1 for its scale, New World delivers more of it. If you loved it for its pulse, manage your expectations — then watch it anyway, because the highs are still higher than most of the genre manages. Full spoiler-free video review above."
+    ]
+  },
+  {
+    slug: "wednesday-season-3-filming-wrapped-release-date",
+    title: "Wednesday Season 3 Is Done Filming — So Where Is the Release Date?",
+    category: "News",
+    date: "2026-10-31",
+    excerpt:
+      "Wednesday Season 3 wrapped filming on 30 September 2026. The cameras are off, the cast list is loaded — Eva Green, Winona Ryder — and Netflix has announced no date, no month, no trailer. Everything confirmed, and the one question nobody can answer.",
+    image: "assets/wednesday-s3-paris.jpg",
+    youtubeId: "kea0h3eGreo",
+    tags: ["Wednesday", "Netflix", "Season 3", "Release Date", "Jenna Ortega"],
+    faq: [
+      { q: "Has Wednesday Season 3 finished filming?",
+        a: "Yes. Season 3 filmed at Ashford Studios in Ireland from 16 February 2026 and wrapped on 30 September 2026 — including an April 2026 shoot in Paris. Production is complete; the season is in post-production." },
+      { q: "When will Wednesday Season 3 be released?",
+        a: "Netflix has announced no date, no month and no episode count, and released no teaser or trailer. Deadline reports a 2027 release, and The Hollywood Reporter calls fall 2027 'very plausible' — both are informed estimates, not announcements." },
+      { q: "Who is joining the cast of Wednesday Season 3?",
+        a: "Eva Green plays Aunt Ophelia and Winona Ryder plays Tabitha. Also confirmed: Chris Sarandon as Balthazar, Noah Taylor as Cyrus, Oscar Morgan as Atticus and Kennedy Moyer as Daisy. Lena Headey, Andrew McCarthy and James Lance are in the season with their roles kept sealed." },
+      { q: "Why was Wednesday filming in Paris?",
+        a: "Nobody knows — and Netflix has explained nothing. The official first look shows Wednesday on a motorcycle with the Eiffel Tower behind her and Thing along for the ride, captioned 'From Paris, with dread'. It is the season's biggest unanswered question." }
+    ],
+    body: [
+      "It is the strangest silence in streaming. *Wednesday* is Netflix's most-watched English-language series ever — Season 2's first four episodes pulled 50 million views in five days and the season finished as the tenth most-watched in Netflix history. Season 3 was renewed in July 2025, filmed from February, and **wrapped on 30 September 2026**. The season exists. It is finished shooting. And Netflix will not tell anyone when it comes out.",
+      "## The Paris Mystery",
+      "In April 2026 the production moved to Paris, and Netflix released the season's only official image: Wednesday on a motorcycle, the Eiffel Tower behind her, Thing riding along, captioned 'From Paris, with dread.' Months later, nobody — not Netflix, not the cast, not a single trade — has explained what Wednesday Addams is doing in Paris. It is the first look, the marketing hook, and a complete mystery.",
+      "## The New Faces",
+      "The casting, at least, is loud. **Eva Green is Aunt Ophelia** — the sister whose shadow hangs over the entire Addams family story. **Winona Ryder plays Tabitha**, reuniting with Tim Burton's world in front of the camera. Chris Sarandon (Balthazar), Noah Taylor (Cyrus), Oscar Morgan (Atticus) and Kennedy Moyer (Daisy) are confirmed, while Lena Headey, Andrew McCarthy and James Lance have roles Netflix is keeping sealed. The season's theme: senior year at Nevermore, and family secrets — the two things Wednesday handles worst.",
+      "## So Where Is the Release Date?",
+      "There isn't one. No date, no month, no episode count, no teaser, no trailer — for a finished season of the biggest English-language show Netflix has ever made. Deadline reports 2027. The Hollywood Reporter calls fall 2027 'very plausible', which is an estimate wearing a suit. A franchise spinoff exists only as trade-reported discussions. What is certain: the wait is now a post-production wait, and the moment Netflix breaks the silence, it becomes the biggest TV story of that week. Our full update video above has every confirmed detail — and nothing that isn't."
+    ]
+  },
+  {
     slug: "patrick-stewart-tribute-final-performance",
     title: "Sir Patrick Stewart (1940–2026): Farewell to Captain Picard — and One Final Performance Still to Come",
     category: "News",
@@ -218,7 +350,6 @@ const ARTICLES = [
       "The most powerful man in the universe just found out the plot to kill him runs through his own family. Plus a streaming king dethroned in six days, a record box-office run hitting its first speed bump, and a Friday so stacked you will need a plan.",
     image: "assets/hires/dune-chani.jpg",
     youtubeId: "8Dx_xfStMIo",
-    featured: true,
     tags: ["Dune Part Three", "News Wrap", "Box Office", "Netflix", "Prime Video"],
     faq: [
       { q: "When does Dune: Part Three open in cinemas?",
@@ -564,6 +695,56 @@ const ARTICLES = [
    "id" is the YouTube video ID (thumbnail source).
    ------------------------------------------------------------ */
 const VIDEOS = [
+  {
+    title: "Did a Documentary Just Beat a DC Movie?! + Dead-End Job Reviews Are In + Mario Closes November?!",
+    series: "Nightly News",
+    label: "Ep 6",
+    id: "7wBQ-bC7J0s",
+    url: "https://youtu.be/7wBQ-bC7J0s"
+  },
+  {
+    title: "Apocalypse Z: New World — Bigger Hordes, But Is It Better Than Part 1?",
+    series: "Reviews",
+    id: "VoP6E67g5Pg",
+    url: "https://youtu.be/VoP6E67g5Pg"
+  },
+  {
+    title: "Top 10 Horror Movies on Netflix (2026) — Halloween Special",
+    series: "Top 10 & Recommendations",
+    id: "ccM4G6CMMrQ",
+    url: "https://youtu.be/ccM4G6CMMrQ"
+  },
+  {
+    title: "Wednesday Season 3 Is Done Filming — So Where Is The Release Date?",
+    series: "Series Updates & Release Dates",
+    id: "kea0h3eGreo",
+    url: "https://youtu.be/kea0h3eGreo"
+  },
+  {
+    title: "Why Is Wednesday in Paris? Netflix Explained Nothing",
+    series: "Shorts",
+    id: "AwBtzZ3rWUo",
+    url: "https://youtube.com/shorts/AwBtzZ3rWUo"
+  },
+  {
+    title: "Patrick Stewart's Farewell Is Coming + A Job That Pays 50× More + Death Stranding Is Now an Anime?!",
+    series: "Nightly News",
+    label: "Ep 5",
+    id: "Ke3c9xGYtNs",
+    url: "https://youtu.be/Ke3c9xGYtNs"
+  },
+  {
+    title: "When Is Avatar Season 3 Releasing? Fans Are Tired of Waiting",
+    series: "Series Updates & Release Dates",
+    id: "WnfAWzFu4SM",
+    url: "https://youtu.be/WnfAWzFu4SM"
+  },
+  {
+    title: "Sir Patrick Stewart (1940–2026) — His Final Performance Is Still To Come",
+    series: "Shorts",
+    id: "2DyOIXMixq8",
+    url: "https://youtube.com/shorts/2DyOIXMixq8"
+  },
   {
     title: "Top 10 Space Adventure Movies You Must Watch — #1 Broke Everyone",
     series: "Top 10 & Recommendations",
