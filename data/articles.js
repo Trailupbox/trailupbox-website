@@ -24,6 +24,110 @@
 
 const ARTICLES = [
   {
+    slug: "everything-coming-to-netflix-november-2026",
+    title: "Everything Coming to Netflix in November 2026 (11 Big Dates) — Mario, Black Doves & More",
+    category: "News",
+    date: "2026-11-01",
+    excerpt:
+      "Eleven big dates, one loaded month: Black Doves Season 2, Lee Chang-dong's Possible Love, Jessica Chastain's Heartland, The Hunting Wives Season 2 — and the billion-dollar Super Mario Galaxy Movie closing the month on Netflix US. Every date, in order.",
+    image: "assets/netflix-november-2026.jpg",
+    youtubeId: "-JossLBvztQ",
+    tags: ["Netflix", "November 2026", "Black Doves", "Super Mario Galaxy", "Release Dates"],
+    faq: [
+      { q: "What's coming to Netflix in November 2026?",
+        a: "The headline dates: Bass X Machina (Nov 3), Black Doves Season 2 (Nov 5), Possible Love (Nov 6), The Devil's Plan: Dead Again (Nov 10), Heartland (Nov 13), The Altruists (Nov 19), Steps (Nov 20), The Mosquito Bowl and a live NFL game (Nov 25), The Hunting Wives Season 2 (Nov 26) and The Super Mario Galaxy Movie (Nov 30)." },
+      { q: "When does The Super Mario Galaxy Movie stream on Netflix?",
+        a: "November 30, 2026, on Netflix US. The film made over $1 billion in theatres, leaves Peacock on November 29, and is expected to stay on Netflix for around ten months under the Universal Pay-1 window." },
+      { q: "When is Black Doves Season 2 released?",
+        a: "Black Doves Season 2 arrives on Netflix on November 5, 2026. Keira Knightley returns as Helen Webb alongside Ben Whishaw as Sam Young, and the season keeps Season 1's tight six-episode shape." },
+      { q: "When does The Hunting Wives Season 2 come out?",
+        a: "The Hunting Wives Season 2 premieres on Netflix on November 26, 2026 — Thanksgiving Day in the US — with eight new episodes. Netflix has already renewed the show for Season 3, and John Stamos joins the cast." },
+      { q: "Is Possible Love worth watching?",
+        a: "On paper, it is the prestige pick of the month. Possible Love (Nov 6) is director Lee Chang-dong's first film since Burning (2018); it won the Grand Jury Prize at Venice, is South Korea's official Oscar submission, and is currently sitting at 100% on Rotten Tomatoes." }
+    ],
+    body: [
+      "November 2026 might be Netflix's most loaded month of the year. Two returning hit thrillers, an Oscar favourite, a World War II epic, live NFL football — and, on the very last day of the month, the biggest movie of the year arrives. The full dated rundown is in our video above; here is every major date in order, with the one fact that makes each title matter.",
+      "## The Returning Hits",
+      "**Black Doves** returns first, on **November 5**. Keira Knightley is back as Helen Webb, the spy hiding inside a politician's marriage and selling secrets to the highest bidder, with Ben Whishaw's Sam Young at her side. Season 1 earned Knightley a Golden Globe nomination, and Season 2 keeps the same tight shape: six episodes, no filler.",
+      "**The Hunting Wives** closes the month's drama slate on **November 26** — Thanksgiving Day in the US. Sophie and Margo start the season on the outs, and old secrets drag them straight back together across eight new episodes. Netflix is not exactly nervous about it: Season 3 is already renewed before Season 2 has even premiered, and John Stamos joins the cast.",
+      "## The Prestige Pick — And a Debut",
+      "If you watch one film this month, make it **Possible Love** on **November 6**. It is director Lee Chang-dong's first feature since *Burning* in 2018, and it arrives carrying the Grand Jury Prize from Venice, South Korea's official submission for the Oscars, and — at the time of writing — a perfect 100% on Rotten Tomatoes. Prestige does not get louder than that.",
+      "**Heartland** lands **November 13**: Jessica Chastain plays Misty Jones, a country star who lost everything and is clawing her way back. The headline inside the headline is real-life country singer Carter Faith, who makes her acting debut — and the soundtrack album drops the same day as the film.",
+      "## The Big Finish",
+      "**The Mosquito Bowl** arrives **November 25**, Peter Berg's true story of America's best college football players, who enlisted after Pearl Harbor and settled their rivalry in one brutal game in the Pacific. It is already playing in theatres, and early critics are split — plenty are unconvinced. The same day, Netflix goes fully live with NFL football: Packers versus Rams on Thanksgiving Eve.",
+      "And then the month ends with the giant. **The Super Mario Galaxy Movie** starts streaming on Netflix US on **November 30**. It made over a billion dollars in theatres around the world, it leaves Peacock on November 29, and it lands on Netflix the very next day — expected to stay for around ten months.",
+      "## Five More Dates for Your Calendar",
+      "**November 3** — Bass X Machina, an adult animated steampunk Western. **November 10** — The Devil's Plan: Dead Again, the Korean mind-game show, where running out of Pieces no longer knocks you out. **November 19** — The Altruists, the rise and fall of the FTX crypto empire, with Julia Garner as Caroline Ellison. **November 20** — Steps, Cinderella retold from the stepsisters' side.",
+      "So here is the real question. Who owns November — the spies of Black Doves on November 5, or Mario on November 30? Pick your side in the comments."
+    ]
+  },
+  {
+    slug: "the-gilded-age-season-4-premieres-tonight",
+    title: "The Gilded Age Season 4 Premieres Tonight — Why Are Critics Calling It the Best Season Yet?",
+    category: "News",
+    date: "2026-11-01",
+    excerpt:
+      "The Gilded Age Season 4 premieres tonight at 9 PM ET on HBO and Max — carrying a perfect 100% on Rotten Tomatoes, the highest score in the show's history. Where Season 3 left everyone, who's new, the full schedule, and the Season 5 question.",
+    image: "assets/the-gilded-age-season-4.jpg",
+    youtubeId: "vZ3sEchn2_E",
+    tags: ["The Gilded Age", "HBO", "Season 4", "Premiere", "Carrie Coon"],
+    faq: [
+      { q: "What time does The Gilded Age Season 4 premiere tonight?",
+        a: "Season 4 premieres tonight, Sunday 1 November 2026, at 9 PM Eastern on HBO — and streams at the same time on HBO Max. Episode 1 is titled 'Ring the Bells'." },
+      { q: "Where can I watch The Gilded Age Season 4?",
+        a: "In the US, on HBO and streaming on HBO Max, Sundays at 9 PM ET. In the UK it starts Monday 2 November on Sky Atlantic and NOW." },
+      { q: "How many episodes are in The Gilded Age Season 4, and when is the finale?",
+        a: "Eight episodes, one every Sunday with no breaks. After tonight's premiere ('Ring the Bells'), Episode 2 'You Won't Hear Me Beg' lands 8 November, and the finale airs 20 December 2026 — just before Christmas." },
+      { q: "What is The Gilded Age Season 4's Rotten Tomatoes score?",
+        a: "A perfect 100% from 12 reviews — the highest score the show has ever had (Season 1: 79%, Season 2: 94%, Season 3: 96%). Its Metacritic score is 83 from 9 reviews, all of them positive." },
+      { q: "Has The Gilded Age been renewed for Season 5?",
+        a: "No. HBO has not ordered a Season 5. HBO chief Casey Bloys told Deadline the network is talking about what a fifth season would look like — a conversation, not a renewal. Nothing is confirmed." }
+    ],
+    body: [
+      "The most polite war on television resumes tonight. *The Gilded Age* Season 4 premieres **tonight, Sunday 1 November at 9 PM Eastern on HBO**, streaming at the same time on Max — and it arrives carrying a number this show has never carried before.",
+      "## A Perfect Score — A Series Record",
+      "Critics have already seen the season, and Season 4 is sitting at **100% on Rotten Tomatoes from 12 reviews**, with not one negative notice among them. That is the highest score in the show's history: Season 1 managed 79%, Season 2 climbed to 94%, Season 3 reached 96%. Metacritic agrees — **83 from 9 reviews, every one positive**. Whatever Julian Fellowes and the team changed this year, the reviewers are calling it the show's best season.",
+      "## Where Season 3 Left Everyone (Almost Spoiler-Free)",
+      "Bertha Russell ended Season 3 on top of the world — and totally alone in it. She married her daughter Gladys into English royalty and beat old New York at its own game; the morning after her biggest ball, her husband George — fresh from surviving an assassination attempt whose shooter was never identified — walked out. Gladys is now a duchess, and pregnant. Peggy accepted Dr. Kirkland's proposal, though his mother does not approve. And Agnes van Rhijn no longer holds the purse strings in her own house — her sister Ada does. Agnes has waited three seasons to take her house back.",
+      "## What's New in 1886",
+      "The year is 1886, and HBO's own word for the season is *consequences*. Bertha has to pay for everything she won; Agnes sees her opening; Marian stops playing by everyone else's rules. The cast grows, too: **Jim Gaffigan joins as a sitting US President, Grover Cleveland**, **Neal Huff plays John D. Rockefeller**, and Dennis Haysbert arrives as Dr. Reginald Harris, while Dr. Kirkland and Mamie Fish are promoted to series regulars. Two familiar faces are gone — Richard Clay and T. Thomas Fortune do not return.",
+      "## The Schedule — And the Season 5 Question",
+      "Eight episodes, one every Sunday: tonight's premiere, 'Ring the Bells', then weekly through the **finale on 20 December**. UK viewers start a day later, Monday 2 November on Sky Atlantic and NOW. One cloud hangs over all of it: **HBO still has not renewed the show for Season 5** — the network says it is talking about it, not ordering it, which makes these eight Sundays matter more than usual. Our full video breakdown is above — and tell us: Team Reunion, or Team Divorce, for George and Bertha?"
+    ]
+  },
+  {
+    slug: "smile-3-announced-new-director",
+    title: "Smile 3 Is Officially Happening — But Its Creator Is Not Directing It",
+    category: "News",
+    date: "2026-11-01",
+    excerpt:
+      "Smile 3 is confirmed at Paramount — but Parker Finn is stepping out of the director's chair. David Bruckner (The Ritual, Hellraiser) directs, Nick Antosca writes, and absolutely nothing else has been announced. No plot, no cast, no date.",
+    image: "assets/smile-3-announced.jpg",
+    youtubeId: "w_24I0YTQPI",
+    tags: ["Smile 3", "Paramount", "Horror", "David Bruckner", "Parker Finn"],
+    faq: [
+      { q: "Is Smile 3 confirmed?",
+        a: "Yes. Paramount is moving forward with Smile 3, confirmed in a Variety exclusive on 28 October 2026 and reported the same day by Deadline and The Hollywood Reporter. David Bruckner directs and Nick Antosca writes." },
+      { q: "Who is directing Smile 3?",
+        a: "David Bruckner — the director of The Ritual, The Night House and the 2022 Hellraiser. Nick Antosca (Channel Zero, The Act) is writing the screenplay from a story framework by Parker Finn, who stays on as a producer. Finn stepped aside because he is directing Paramount's Possession remake." },
+      { q: "When is the Smile 3 release date?",
+        a: "There isn't one. No release date, no production start, no plot and no cast have been announced for Smile 3 — anyone quoting you a date is inventing it. The film is listed as in development, and this page will be updated the moment Paramount announces anything." },
+      { q: "Will Skye Riley return in Smile 3?",
+        a: "Unknown. Naomi Scott's return has not been confirmed — nor has Sosie Bacon's. No casting of any kind has been announced, so whether the curse passes to a brand-new victim or comes back for Skye Riley is still an open question." }
+    ],
+    body: [
+      "*Smile 3* is officially happening — and the biggest twist is already behind the camera. Paramount is moving forward with the third film in its breakout horror franchise, but **Parker Finn, the creator who wrote and directed the first two, is not directing this one**. He hands the chair to **David Bruckner**, stays on as a producer, and leaves the franchise in deliberately darker hands.",
+      "## The New Team",
+      "The news broke in a Variety exclusive on 28 October, confirmed the same day by Deadline and The Hollywood Reporter. **Bruckner directs. Nick Antosca writes**, working from a story framework Finn pitched. Finn's reason for stepping aside is simple scheduling: he is directing Paramount's *Possession* remake, and the studio was not going to wait. Antosca is no hired pen, either — he created *Channel Zero* and co-created *The Act*, two of the most dread-soaked titles in modern horror television.",
+      "## Why the Tone Is About to Change",
+      "Read Bruckner's filmography and the signal is hard to miss: *The Ritual* is folk-horror dread, *The Night House* is a slow psychological unravelling, and his *Hellraiser* is brutal body horror. Finn's Smile films run on jump scares; Bruckner's run on atmosphere that gets under your skin and stays there. Pair him with Antosca and the franchise's centre of gravity shifts from the jump to the dread — slower, meaner, and built to linger.",
+      "## The Money Explains the Sequel",
+      "Paramount's logic is arithmetic. *Smile* (2022) made **$217 million worldwide on a budget of about $17 million**. *Smile 2* (2024) made **$138 million on $28 million**. That is more than $355 million across two films that together cost less than $50 million to make — one of the most profitable horror runs of the decade.",
+      "## What Nobody Knows Yet",
+      "Here is the honest part: **no plot, no cast, no release date and no production start have been announced**. Not Skye Riley, not a new victim, not a month, not a year. The film exists, the director exists, the writer exists — and everything else is a blank page. Our 60-second video breakdown is above. So, who gets cursed next: a brand-new victim, or does the entity come back for Skye Riley?"
+    ]
+  },
+  {
     slug: "top-10-horror-movies-netflix-2026",
     title: "Top 10 Horror Movies on Netflix (2026) — The Halloween Countdown",
     category: "Recommendation",
@@ -695,6 +799,24 @@ const ARTICLES = [
    "id" is the YouTube video ID (thumbnail source).
    ------------------------------------------------------------ */
 const VIDEOS = [
+  {
+    title: "Everything Coming to Netflix in November 2026 (11 Big Dates) — Mario, Black Doves & More",
+    series: "K-Drama & Netflix",
+    id: "-JossLBvztQ",
+    url: "https://youtu.be/-JossLBvztQ"
+  },
+  {
+    title: "The Gilded Age Season 4 Premieres TONIGHT — Why Are Critics Calling It The Best Season Yet?",
+    series: "Series Updates & Release Dates",
+    id: "vZ3sEchn2_E",
+    url: "https://youtu.be/vZ3sEchn2_E"
+  },
+  {
+    title: "Smile 3 Is Happening — But Not By Its Creator",
+    series: "Shorts",
+    id: "w_24I0YTQPI",
+    url: "https://youtube.com/shorts/w_24I0YTQPI"
+  },
   {
     title: "Did a Documentary Just Beat a DC Movie?! + Dead-End Job Reviews Are In + Mario Closes November?!",
     series: "Nightly News",
